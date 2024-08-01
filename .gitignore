@@ -741,3 +741,7 @@ obj/
 .firebase/
 
 # End of https://www.toptal.com/developers/gitignore/api/firebase
+
+# Custom Rules
+package-lock.json
+# End of Custom Rules

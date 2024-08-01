@@ -35,6 +35,9 @@
     }
 
     .hero h1 {
+        font-family: 'Bevan', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: var(--lh-600);
+
         font-weight: 400;
         max-width: 30rem;
         margin: 0 1rem 2rem;

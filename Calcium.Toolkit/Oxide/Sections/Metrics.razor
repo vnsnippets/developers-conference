@@ -1,0 +1,26 @@
+﻿@using Calcium.Core.Types
+@using Calcium.Toolkit.Oxide.Layouts
+
+@if (Parameters != null)
+{
+    <SectionWithTitle @attributes="AdditionalAttributes" Title="@Parameters.Title" Caption="@Parameters.Caption">
+        <div class="metrics-items">
+            @foreach(var item in Parameters.Items.OrderBy((e) => e.Index))
+            {
+                <div class="item" data-featured-item="@item.Featured">
+                    <h2 class="icon">@item.Icon</h2>
+                    <h2 class="title">@item.Title</h2>
+                    <p class="caption">@item.Caption</p>
+                </div>
+            }
+        </div>
+    </SectionWithTitle>
+}
+
+@code {
+    [Parameter]
+    public Sections.Cards? Parameters { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+}

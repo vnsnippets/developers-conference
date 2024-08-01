@@ -1,0 +1,35 @@
+﻿@using Calcium.Core.Types
+@using Calcium.Toolkit.Oxide.Layouts
+
+@if (Parameters != null)
+{
+    <SectionWithTitle Title="@Parameters.Title" Caption="@Parameters.Caption">
+        @if (Parameters.Items.Any())
+        {
+            <div class="subscription-items">    
+            @foreach (var item in Parameters.Items.OrderBy((e) => e.Index))
+            {
+                <a class="item" href="@item.CTA?.URL" data-featured-item="@item.Featured">
+                    <h1 class="icon">💀</h1>
+
+                    <h5>@item.Title</h5>
+                    <p class="details">@item.Caption</p>
+
+                    @if (item.CTA != null) 
+                    {
+                        <p class="cta">@item.CTA.Name</p>
+                    }
+                </a>
+            }
+            </div>
+        }
+    </SectionWithTitle>
+}
+
+@code {
+    [Parameter]
+    public Sections.Cards? Parameters { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+}

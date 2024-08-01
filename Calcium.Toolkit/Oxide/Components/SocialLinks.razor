@@ -4,7 +4,7 @@
 {
     <section class="social">
         <ul class="links">
-            @foreach (var item in Links)
+            @foreach (var item in Links.OrderBy((e) => e.Index))
             {
                 <li>
                     <a class="button small icon secondary-400" href="@item.URL">
@@ -42,5 +42,5 @@
 
 @code {
     [Parameter]
-    public List<Links.Social> Links { get; set; } = [];
+    public List<Lists.Social> Links { get; set; } = [];
 }

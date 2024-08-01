@@ -2,7 +2,7 @@
 
 @if (@Content != null)
 {
-    <section class="hero">
+    <section @attributes="AdditionalAttributes" class="hero">
         @* <img src="/images/emoji-explode.png" alt="hero-section-overlay" class="overlay" /> *@
         <h1 class="title contrast">@Content.Title</h1>
         @foreach (var line in Content.Subtitles)
@@ -20,4 +20,7 @@
 @code {
     [Parameter]
     public Sections.Hero? Content { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
 }

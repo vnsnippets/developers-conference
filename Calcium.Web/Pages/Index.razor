@@ -1,0 +1,11 @@
+﻿@page "/"
+@using Calcium.Core
+@using Calcium.Toolkit.Oxide.Sections
+@using Calcium.Toolkit.Oxide.Widgets
+
+<PageTitle>Calcium | Home</PageTitle>
+
+<Hero id="hero-section" Content="@Site.Sections.Hero" />
+<Countdown Parameters="@Site.Widgets.Countdown" />
+<Subscriptions id="section-cta" Parameters="@Site.Sections.Subscriptions" />
+<Metrics id="section-metrics" Parameters="@Site.Sections.Metrics" />

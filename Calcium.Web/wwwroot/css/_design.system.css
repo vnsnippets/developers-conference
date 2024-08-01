@@ -93,13 +93,9 @@ html {
 }
 
 /* Typography */
-.title {
-    font-family: 'Bevan', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: var(--lh-600);
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
+    margin: 0;
 }
 
 h1, h1 * { 
@@ -123,6 +119,7 @@ h6 {
 
 p {
     font-size: var(--fs-100);
+    margin: 0;
 }
 
 small {

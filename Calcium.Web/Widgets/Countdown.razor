@@ -1,0 +1,70 @@
+﻿@using Calcium.Core;
+
+@if (Parameters != null)
+{
+    <div class="countdown-widget">
+        <h5>@Parameters.Heading</h5>
+        <div class="countdown-container">
+
+            <div class="count-wrap">
+                <div class="ticker">
+                    <h1 id="days">@_days</h1>
+                    <span class="caption">Days</span>
+                </div>
+            </div>
+            <div class="count-wrap">
+                <div class="ticker">
+                    <h1 id="hours">@string.Format("{0:00}", @_hours)</h1>
+                    <span class="caption">Hours</span>
+                </div>
+            </div>
+            <div class="count-wrap">
+                <div class="ticker">
+                    <h1 id="minutes">@string.Format("{0:00}", @_minutes)</h1>
+                    <span class="caption">Minutes</span>
+                </div>
+            </div>
+            <div class="count-wrap">
+                <div class="ticker">
+                    <h1 id="seconds">@string.Format("{0:00}", @_seconds)</h1>
+                    <span class="caption">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Calcium.Core.Types.Widgets.Countdown? Parameters { get; set; }
+
+    private System.Timers.Timer _timer = new System.Timers.Timer(1000);
+    private int _days, _hours, _minutes, _seconds = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _timer.Elapsed += (sender, eventArgs) => countdown();
+        _timer.Start();
+
+        await base.OnInitializedAsync();
+    }
+
+    private void countdown()
+    {
+        if (Parameters != null && Parameters.Deadline > DateTime.Now)
+        {
+            var waitTime = Parameters.Deadline - DateTime.Now;
+            _days = waitTime.Days;
+            _hours = waitTime.Hours;
+            _minutes = waitTime.Minutes;
+            _seconds = waitTime.Seconds;
+
+            StateHasChanged();
+        }
+        else
+        {
+            Parameters = null;
+            _timer.Stop();
+        }
+    }
+}

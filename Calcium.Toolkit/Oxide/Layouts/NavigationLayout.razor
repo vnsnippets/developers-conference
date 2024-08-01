@@ -1,0 +1,23 @@
+@inherits LayoutComponentBase
+
+@using Calcium.Core
+@using Calcium.Toolkit.Oxide.Components
+@using Calcium.Toolkit.Oxide.Sections
+
+<nav class="navigation">
+    <div class="container">
+        <div class="brand">
+            <a href="@Site.Brand.URL">
+                <img src="@Site.Brand.ImagePath" alt="@Site.Brand.Label" />
+            </a>
+        </div>
+
+        <SocialLinks Links="@Site.Menus.Social" />
+    </div>
+</nav>
+
+<section class="content">
+    @Body
+</section>
+
+<Footer Message="MSCC | DEVELOPERS CONFERENCE 2025" />

@@ -1,0 +1,58 @@
+﻿.countdown-widget {
+    text-align: center;
+    margin: -6rem 4rem 0;
+    padding: 2.5rem 1rem;
+    border-radius: 1rem;
+    background: var(--secondary-300);
+    filter: drop-shadow(0 0 10px #00000020);
+}
+
+.countdown-widget h5 {
+    margin: 0 0 0.5rem;
+}
+
+    .countdown-widget .countdown-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .countdown-widget .countdown-container .count-wrap {
+            display: flex;
+        }
+
+            .countdown-widget .countdown-container .count-wrap:not(:last-of-type)::after {
+                content: ':';
+                color: var(--body-400);
+                display: flex;
+                align-items: start;
+                font-size: var(--fs-550);
+                margin: 0 0.5rem;
+            }
+
+            .countdown-widget .countdown-container .count-wrap .ticker {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                flex-direction: column;
+            }
+
+
+                .countdown-widget .countdown-container .count-wrap .ticker h1 {
+                    margin: 0;
+                }
+
+
+                .countdown-widget .countdown-container .count-wrap .ticker .caption {
+                    display: flex;
+                    justify-content: center;
+                    color: var(--body-400);
+                    text-transform: uppercase;
+                    margin: -0.25rem 0 0;
+                }
+
+@media screen and (min-width: 768px) {
+    .countdown-widget .countdown-container .count-wrap:not(:last-of-type)::after {
+        margin: 0 2rem;
+    }
+}

@@ -1,0 +1,43 @@
+﻿.navigation {
+    /*background: var(--primary-500);*/
+    max-width: var(--max-width);
+    border-end-start-radius: var(--default-border-radius);
+    border-end-end-radius: var(--default-border-radius);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.navigation .container {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0.75rem 1rem;
+    width: 100%;
+}
+
+.navigation .container .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .navigation .container .brand a {
+        line-height: 0;
+    }
+
+        .navigation .container .brand img {
+            max-height: 1.8rem;
+        }
+
+.content {
+    flex: 1;
+    margin: 0 0.75rem;
+}

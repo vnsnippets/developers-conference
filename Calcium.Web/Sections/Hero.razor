@@ -1,0 +1,23 @@
+﻿@using Calcium.Core.Types;
+
+@if (@Content != null)
+{
+    <section class="hero">
+        @* <img src="/images/emoji-explode.png" alt="hero-section-overlay" class="overlay" /> *@
+        <h1 class="title contrast">@Content.Title</h1>
+        @foreach (var line in Content.Subtitles)
+        {
+            <h3 class="contrast">@line</h3>
+        }
+
+        @if (Content.CTA != null)
+        {
+            <a class="button secondary-400 mt-3" href="@Content.CTA.URL">@Content.CTA.Name</a>
+        }
+    </section>
+}
+
+@code {
+    [Parameter]
+    public Sections.Hero? Content { get; set; }
+}

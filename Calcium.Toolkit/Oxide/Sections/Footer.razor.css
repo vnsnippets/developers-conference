@@ -4,9 +4,14 @@
     justify-content: center;
 
     background-color: var(--primary-800);
-    color: var(--primary-contrast);
 
-    margin: 1rem 0.75rem 0;
+    margin: 3rem 0.75rem 0;
     border-start-start-radius: var(--border-radius);
     border-start-end-radius: var(--border-radius);
 }
+
+    .site-footer * {
+        margin: 1rem 0;
+        color: var(--primary-contrast);
+        font-size: var(--fs-50);
+    }

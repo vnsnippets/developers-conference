@@ -62,7 +62,7 @@ html {
     font-weight: 400;
     line-height: 1.4;
     color: var(--body-500);
-    min-width: 425px;
+    /*min-width: 425px;*/
 }
 
 

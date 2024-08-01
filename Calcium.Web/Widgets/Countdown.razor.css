@@ -1,6 +1,6 @@
 ﻿.countdown-widget {
     text-align: center;
-    margin: -6rem 4rem 0;
+    margin: -6rem 3rem 0;
     padding: 2.5rem 1rem;
     border-radius: 1rem;
     background: var(--secondary-300);
@@ -52,6 +52,10 @@
                 }
 
 @media screen and (min-width: 768px) {
+    .countdown-widget {
+        margin: -6rem 4rem 0;
+    }
+
     .countdown-widget .countdown-container .count-wrap:not(:last-of-type)::after {
         margin: 0 2rem;
     }

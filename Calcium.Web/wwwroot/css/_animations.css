@@ -1,0 +1,65 @@
+﻿@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(0.25, 0.25);
+    }
+
+    50% {
+        transform: scale(1.15, 1.15);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes drop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+[data-animate-load] {
+    animation: drop-in 300ms ease-in;
+}
+
+[data-animate-scroll] {
+    opacity: 0;
+}
+
+.drop-in {
+    animation: drop-in 300ms ease-in;
+    opacity: 1;
+}
+
+.fade-in {
+    animation: fade-in 300ms ease-in;
+    opacity: 1;
+}
+
+.zoom-in-zoom-out {
+    animation: zoom-in-zoom-out 300ms ease-in;
+    opacity: 1;
+}
+
+#emoji-rain {
+    margin: 0 auto;
+    width: 20px;
+    overflow: visible;
+    position: relative;
+}

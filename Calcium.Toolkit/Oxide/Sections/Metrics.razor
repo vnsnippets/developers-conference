@@ -4,7 +4,7 @@
 
 @if (Parameters != null)
 {
-    <SectionWithTitle @attributes="AdditionalAttributes" Title="@Parameters.Title" Caption="@Parameters.Caption">
+    <SectionWithTitle Title="@Parameters.Title" Caption="@Parameters.Caption" @attributes=AdditionalAttributes>
         <div class="metrics-items">
             @foreach(var item in Parameters.Items.OrderBy((e) => e.Index))
             {

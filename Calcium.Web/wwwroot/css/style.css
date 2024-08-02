@@ -1,4 +1,5 @@
 ﻿@import "/css/_design.system.css";
+@import "/css/_animations.css";
 
 /* Voodoo for SVG */
 /*svg {
@@ -46,6 +47,12 @@ main {
 }
 
 /* DEFAULT BLAZOR STYLES */
+.blazor-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
 
 #blazor-error-ui {
     background: lightyellow;
@@ -81,9 +88,7 @@ main {
     display: block;
     width: 8rem;
     height: 8rem;
-    margin: 20vh auto 1rem auto;
 }
-
     .loading-progress circle {
         fill: none;
         stroke: #e0e0e0;
@@ -93,12 +98,25 @@ main {
     }
 
         .loading-progress circle:last-child {
-            stroke: #1b6ec2;
+            stroke: var(--secondary-500);
             stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
             transition: stroke-dasharray 0.05s ease-in-out;
         }
 
-.loading-progress-text {
+        .blazor-loading::after {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            content: var(--blazor-load-percentage-text, "Loading");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+/*.loading-progress-text {
     position: absolute;
     text-align: center;
     font-weight: bold;
@@ -107,7 +125,7 @@ main {
 
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
-    }
+    }*/
 
 code {
     color: #c02d76;

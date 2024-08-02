@@ -41,9 +41,10 @@ public static class Site
                 new() {
                     Icon = Icon.Cool,
                     Featured = true,
-                    Title = "Embark on the journey with us!",
+                    //Title = "Embark on the journey with us!",
                     Caption = "Sponsor our community event and help us create lasting impact in the industry on the island.",
-                    CTA = new("BECOME A SPONSOR", "#"),
+                    Conditions = "Contact us via email to request for sponsorship proposals.",
+                    CTA = new("SEND REQUEST NOW", "mailto:vidush.namah@orion-next.com"),
                     Index = 0
                 },
                 new() {

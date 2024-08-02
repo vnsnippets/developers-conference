@@ -7,9 +7,10 @@
     justify-content: center;
     flex-direction: column;
     color: var(--white);
-    padding: 12rem 0;
+    /*padding: 12rem 0;*/
     border-radius: 1rem;
     overflow: hidden;
+    height: 50rem;
 }
 
     .hero::before {
@@ -32,6 +33,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .hero .hero-body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        animation: zoom-in-zoom-out 500ms ease-in-out;
     }
 
     .hero h1 {

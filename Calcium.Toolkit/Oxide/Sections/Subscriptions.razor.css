@@ -20,6 +20,12 @@
         cursor: pointer;
         min-width: 180px;
     }
+    .subscription-items .item .item-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
 
         .subscription-items .item:hover {
             transform: scale(1.025);

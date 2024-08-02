@@ -1,25 +1,30 @@
 ﻿@using Calcium.Core.Types;
 
-@if (@Content != null)
+@if (Parameters != null)
 {
-    <section @attributes="AdditionalAttributes" class="hero">
-        @* <img src="/images/emoji-explode.png" alt="hero-section-overlay" class="overlay" /> *@
-        <h1 class="title contrast">@Content.Title</h1>
-        @foreach (var line in Content.Subtitles)
-        {
-            <h3 class="contrast">@line</h3>
-        }
+    <section @attributes=AdditionalAttributes class="hero">
 
-        @if (Content.CTA != null)
-        {
-            <a class="button secondary-400 mt-3" href="@Content.CTA.URL">@Content.CTA.Name</a>
-        }
+        <div class="hero-body">
+            @if (!string.IsNullOrEmpty(Parameters.Title)) 
+            {
+                <h1 class="title contrast">@Parameters.Title</h1>
+            }
+            @foreach (var line in Parameters.Subtitles)
+            {
+                <h3 class="contrast">@line</h3>
+            }
+
+            @if (Parameters.CTA != null)
+            {
+                <a class="button secondary-400 mt-3" href="@Parameters.CTA.URL">@Parameters.CTA.Name</a>
+            }
+        </div>
     </section>
 }
 
 @code {
     [Parameter]
-    public Sections.Hero? Content { get; set; }
+    public Sections.Hero? Parameters { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

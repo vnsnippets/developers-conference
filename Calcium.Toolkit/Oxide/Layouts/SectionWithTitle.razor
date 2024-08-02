@@ -1,5 +1,5 @@
-﻿<section @attributes="AdditionalAttributes" data-layout="section-with-title">
-    @if (!string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Caption))
+﻿<section @attributes=AdditionalAttributes data-layout="section-with-title">
+    @if (HasTitleAndCaption())
     {
         <div class="title-box">
             <h3 class="title">@Title</h3>
@@ -13,6 +13,7 @@
 </section>
 
 @code {
+
     [Parameter]
     public string Title { get; set; } = string.Empty;
 
@@ -25,4 +26,6 @@
 
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
+
+    private bool HasTitleAndCaption() => !string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Caption);
 }

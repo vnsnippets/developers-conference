@@ -22,6 +22,7 @@
             public bool Featured { get; set; } = false;
             public string Title { get; set; } = string.Empty;
             public string Caption { get; set; } = string.Empty;
+            public string Conditions { get; set; } = string.Empty;
             public Link? CTA { get; set; }
         }
     }

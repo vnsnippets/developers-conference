@@ -12,20 +12,24 @@
 
     <link href="Calcium.Web.styles.css" rel="stylesheet" />
     <link href="_content/Calcium.Toolkit/Calcium.Toolkit.bundle.scp.css" rel="stylesheet">
+
+    <script type="module" src="js/script.js"></script>
 </head>
 
 <body>
+    <div id="emoji-rain"></div>
     <main id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
+        <div class="blazor-loading">
+            <svg class="loading-progress">
+                <circle r="40%" cx="50%" cy="50%" />
+                <circle r="40%" cx="50%" cy="50%" />
+            </svg>
 
-        <div id="blazor-error-ui">
-            An unhandled error has occurred.
-            <a href="" class="reload">Reload</a>
-            <a class="dismiss">🗙</a>
+            <div id="blazor-error-ui">
+                An unhandled error has occurred.
+                <a href="" class="reload">Reload</a>
+                <a class="dismiss">🗙</a>
+            </div>
         </div>
     </main>
     <script src="_framework/blazor.webassembly.js"></script>

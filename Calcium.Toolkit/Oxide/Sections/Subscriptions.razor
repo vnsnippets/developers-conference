@@ -4,24 +4,38 @@
 
 @if (Parameters != null)
 {
-    <SectionWithTitle Title="@Parameters.Title" Caption="@Parameters.Caption">
+    <SectionWithTitle Title="@Parameters.Title" Caption="@Parameters.Caption" @attributes=AdditionalAttributes>
         @if (Parameters.Items.Any())
         {
-            <div class="subscription-items">    
-            @foreach (var item in Parameters.Items.OrderBy((e) => e.Index))
-            {
-                <a class="item" href="@item.CTA?.URL" data-featured-item="@item.Featured">
-                    <Vector Type="item.Icon" Width="60" Height="60" />
+            <div class="subscription-items">
+                @foreach (var item in Parameters.Items.OrderBy((e) => e.Index))
+                {
+                    <a class="item" href="@item.CTA?.URL" data-featured-item="@item.Featured">
+                        <Vector Type="item.Icon" Width="60" Height="60" data-animate-scroll="zoom-in-zoom-out" data-animate-delay />
 
-                    <h5 class="title">@item.Title</h5>
-                    <p class="details">@item.Caption</p>
+                        <div class="item-body">
+                            @if (!string.IsNullOrEmpty(item.Title))
+                            {
+                                <h5 class="title">@item.Title</h5>
+                            }
 
-                    @if (item.CTA != null) 
-                    {
-                        <p class="cta">@item.CTA.Name</p>
-                    }
-                </a>
-            }
+                            @if (!string.IsNullOrEmpty(item.Caption))
+                            {
+                                <p class="details">@item.Caption</p>
+                            }
+
+                            @if (!string.IsNullOrEmpty(item.Conditions))
+                            {
+                                <p class="small">@item.Conditions</p>
+                            }
+
+                            @if (item.CTA != null)
+                            {
+                                <p class="cta">@item.CTA.Name</p>
+                            }
+                        </div>
+                    </a>
+                }
             </div>
         }
     </SectionWithTitle>

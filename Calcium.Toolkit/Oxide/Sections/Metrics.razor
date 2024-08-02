@@ -9,7 +9,7 @@
             @foreach(var item in Parameters.Items.OrderBy((e) => e.Index))
             {
                 <div class="item" data-featured-item="@item.Featured">
-                    <Vector Type="@item.Icon" Width="30" Height="30" />
+                    <Vector Type="@item.Icon" Width="40" Height="40" data-animate-scroll="zoom-in-zoom-out" />
                     <h2 class="title">@item.Title</h2>
                     <p class="caption">@item.Caption</p>
                 </div>

@@ -67,7 +67,7 @@ public static class Site
                     Featured = true,
                     Title = "1600+",
                     Caption = "Attendees",
-                    Icon = Icon.None
+                    Icon = Icon.StarEyes
                 },
                 new() {
                     Index = 1,

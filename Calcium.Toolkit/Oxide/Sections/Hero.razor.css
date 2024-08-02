@@ -1,5 +1,5 @@
 ﻿.hero {
-    /*--background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='1200' height='800' viewBox='0 0 1200 800' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0H1200V800H0V0Z' fill='%23295BCE'/><path d='M0 504.797V0H1200V504.797C1029.92 623.428 823.087 693 600 693C376.913 693 170.075 623.428 0 504.797Z' fill='%232D64E3'/></svg>");*/
+    --background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='1200' height='800' viewBox='0 0 1200 800' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0H1200V800H0V0Z' fill='%23295BCE'/><path d='M0 504.797V0H1200V504.797C1029.92 623.428 823.087 693 600 693C376.913 693 170.075 623.428 0 504.797Z' fill='%232D64E3'/></svg>");
 
     position: relative;
     display: flex;
@@ -13,11 +13,11 @@
 }
 
     .hero::before {
-        /*background-image: var(--background-image);*/
-        /*background-size: cover;*/
-        /*background-position: bottom center;*/
+        background-image: var(--background-image);
+        background-size: cover;
+        background-position: bottom center;
 
-        background: var(--body-300);
+        /*background: var(--body-300);*/
         content: '';
         position: absolute;
         top: 0;

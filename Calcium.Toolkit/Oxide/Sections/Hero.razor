@@ -3,7 +3,7 @@
 @if (@Content != null)
 {
     <section @attributes="AdditionalAttributes" class="hero">
-        @* <img src="/images/emoji-explode.png" alt="hero-section-overlay" class="overlay" /> *@
+        <img src="/images/emoji-explode.png" alt="hero-section-overlay" class="overlay" />
         <h1 class="title contrast">@Content.Title</h1>
         @foreach (var line in Content.Subtitles)
         {

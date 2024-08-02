@@ -92,14 +92,14 @@ public static class Site
 
         public readonly static string[] Gallery =
         [
-            "images/Gallery-1.jpg",
-            "images/Gallery-2.jpg",
-            "images/Gallery-3.jpg",
-            "images/Gallery-4.jpg",
-            "images/Gallery-5.jpg",
-            "images/Gallery-6.jpg",
-            "images/Gallery-7.jpg",
-            "images/Gallery-8.jpg"
+            "images/Gallery-1.webp",
+            "images/Gallery-2.webp",
+            "images/Gallery-3.webp",
+            "images/Gallery-4.webp",
+            "images/Gallery-5.webp",
+            "images/Gallery-6.webp",
+            "images/Gallery-7.webp",
+            "images/Gallery-8.webp"
         ];
     }
 

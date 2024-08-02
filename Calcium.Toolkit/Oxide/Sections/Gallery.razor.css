@@ -12,6 +12,7 @@
     border-radius: 0.5rem;
     grid-row: span 1;
     overflow: hidden;
+    background-color: var(--secondary-500);
 }
 
 .gallery-item img {

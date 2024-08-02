@@ -3,21 +3,19 @@
 
 @if (Parameters != null)
 {
-    <SectionWithTitle @attributes=AdditionalAttributes Title="@Parameters.Title" Caption="@Parameters.Caption">
         <div class="gallery-grid">
             @for (var i = 0; i < 8; i++)
             {
                 <div class="gallery-item" data-animate-scroll="zoom-in-zoom-out">
-                    <img class="gallery-image" src="https://picsum.photos/1000/1000?random=@i" />
+                    <img class="gallery-image" src="@Parameters[i]" />
                 </div>
             }
         </div>
-    </SectionWithTitle>
 }
 
 @code {
     [Parameter]
-    public Sections.Gallery? Parameters { get; set; }
+    public string[] Parameters { get; set; } = [];
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

@@ -48,7 +48,7 @@ public static class Site
                     Index = 0
                 },
                 new() {
-                    Icon = Icon.StarEyes,
+                    Icon = Icon.Smile,
                     Title = "The floor is yours!",
                     Caption = "Submit a session proposal for our conference and inspire others. Don't miss out!",
                     CTA = new("SUBMIT SESSION", "#"),
@@ -67,7 +67,7 @@ public static class Site
                     Featured = true,
                     Title = "1600+",
                     Caption = "Attendees",
-                    Icon = Icon.StarEyes
+                    Icon = Icon.Smile
                 },
                 new() {
                     Index = 1,
@@ -79,7 +79,7 @@ public static class Site
                     Index = 2,
                     Title = "70+",
                     Caption = "Sessions",
-                    Icon = Icon.StarEyes
+                    Icon = Icon.Smile
                 },
                 new() {
                     Index = 3,
@@ -90,10 +90,17 @@ public static class Site
             ]
         };
 
-        public readonly static Types.Sections.Gallery Gallery = new()
-        {
-
-        };
+        public readonly static string[] Gallery =
+        [
+            "images/Gallery-1.jpg",
+            "images/Gallery-2.jpg",
+            "images/Gallery-3.jpg",
+            "images/Gallery-4.jpg",
+            "images/Gallery-5.jpg",
+            "images/Gallery-6.jpg",
+            "images/Gallery-7.jpg",
+            "images/Gallery-8.jpg"
+        ];
     }
 
     public static class Widgets

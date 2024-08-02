@@ -4,5 +4,5 @@ public enum Icon
 {
     None,
     Facebook, Instagram, Github, LinkedIn, X,
-    Cool, StarEyes
+    Cool, StarEyes, Smile
 }

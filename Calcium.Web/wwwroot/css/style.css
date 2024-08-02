@@ -98,11 +98,11 @@ main {
     }
 
         .loading-progress circle:last-child {
-            stroke: var(--secondary-500);
+            stroke: var(--secondary-600);
             stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
             transition: stroke-dasharray 0.05s ease-in-out;
         }
-
+/*
         .blazor-loading::after {
             position: absolute;
             left: 0;
@@ -114,7 +114,7 @@ main {
             align-items: center;
             justify-content: center;
         }
-
+*/
 
 /*.loading-progress-text {
     position: absolute;

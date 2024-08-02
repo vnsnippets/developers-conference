@@ -34,8 +34,8 @@
             color: var(--primary-contrast);
         }
 
-        .subscription-items .item .icon {
-            margin: 0 0 1rem;
+        .subscription-items .item .title {
+            margin: 0.75rem 0 0;
         }
 
         .subscription-items .item .details {

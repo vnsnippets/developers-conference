@@ -12,7 +12,21 @@
             </a>
         </div>
 
-        <SocialLinks Links="@Site.Menus.Social" />
+        @if (Links.Any())
+        {
+            <section class="social">
+                <ul class="links">
+                    @foreach (var item in Links.OrderBy((e) => e.Index))
+                    {
+                        <li>
+                            <a class="button small icon secondary-400" href="@item.URL">
+                                <Vector Type="item.Type" />
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </section>
+        }
     </div>
 </nav>
 
@@ -21,3 +35,7 @@
 </section>
 
 <Footer Message="DEVELOPMENT IN PROGRESS | VIDUSH H. NAMAH" />
+
+@code {
+    public List<Calcium.Core.Types.Lists.Social> Links = Site.Menus.Social;
+}

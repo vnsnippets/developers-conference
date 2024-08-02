@@ -24,4 +24,9 @@ public static class Sections
     {
         public List<Card> Items { get; set; } = [];
     }
+
+    public class Gallery : Layouts.SectionWithTitleParameters
+    {
+        public List<string> Images { get; set; } = [];
+    }
 }

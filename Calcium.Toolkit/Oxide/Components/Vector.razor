@@ -1,0 +1,52 @@
+﻿@using Calcium.Core.Types
+@using Calcium.Toolkit.Assets
+@using Calcium.Toolkit.Assets.Emojis
+
+@if (Type != null && Type != Icon.None) {
+    <span class="vector-icon">
+        @switch (Type)
+        {
+            case Icon.Facebook:
+                <Calcium.Toolkit.Assets.Facebook width="@Width" height="@Height" />
+                break;
+
+            case Icon.Instagram:
+                <Calcium.Toolkit.Assets.Instagram width="@Width" height="@Height" />
+                break;
+
+            case Icon.Github:
+                <Calcium.Toolkit.Assets.Github width="@Width" height="@Height" />
+                break;
+
+            case Icon.LinkedIn:
+                <Calcium.Toolkit.Assets.LinkedIn width="@Width" height="@Height" />
+                break;
+
+            case Icon.X:
+                <X width="@Width" height="@Height" />
+                break;
+
+            case Icon.Cool:
+                <EmojiCool width="@Width" height="@Height" />
+                break;
+
+            case Icon.StarEyes:
+                <EmojiStarEyes width="@Width" height="@Height" />
+                break;
+
+            default:
+                break;
+        }
+    </span>
+}
+
+@code {
+    [Parameter]
+    public Core.Types.Icon? Type { get; set; }
+
+    [Parameter]
+    public int Width { get; set; } = 20;
+
+    [Parameter]
+    public int Height { get; set; } = 20;
+}

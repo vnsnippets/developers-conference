@@ -1,4 +1,6 @@
-﻿namespace Calcium.Core;
+﻿using Calcium.Core.Types;
+
+namespace Calcium.Core;
 
 public static class Site
 {
@@ -13,9 +15,9 @@ public static class Site
     public static class Menus
     {
         public readonly static List<Types.Lists.Social> Social = [
-            new("facebook", "https://facebook.com", Types.Channel.Facebook),
-            new("instagram", "https://instagram.com", Types.Channel.Instagram),
-            new("linkedin", "https://linkedin.com", Types.Channel.LinkedIn)
+            new("facebook", "https://facebook.com", Types.Icon.Facebook),
+            new("instagram", "https://instagram.com", Types.Icon.Instagram),
+            new("linkedin", "https://linkedin.com", Types.Icon.LinkedIn)
         ];
     }
 
@@ -37,6 +39,7 @@ public static class Site
             Caption = "We would love to have you onboard as a sponsor or speaker.",
             Items = [
                 new() {
+                    Icon = Icon.Cool,
                     Featured = true,
                     Title = "Embark on the journey with us!",
                     Caption = "Sponsor our community event and help us create lasting impact in the industry on the island.",
@@ -44,6 +47,7 @@ public static class Site
                     Index = 0
                 },
                 new() {
+                    Icon = Icon.StarEyes,
                     Title = "The floor is yours!",
                     Caption = "Submit a session proposal for our conference and inspire others. Don't miss out!",
                     CTA = new("SUBMIT SESSION", "#"),
@@ -62,27 +66,32 @@ public static class Site
                     Featured = true,
                     Title = "1600+",
                     Caption = "Attendees",
-                    Icon = "🥳"
+                    Icon = Icon.None
                 },
                 new() {
                     Index = 1,
                     Title = "80+",
                     Caption = "Speakers",
-                    Icon = "👩‍💻"
+                    Icon = Icon.Cool
                 },
                 new() {
                     Index = 2,
                     Title = "70+",
                     Caption = "Sessions",
-                    Icon = "🚀"
+                    Icon = Icon.StarEyes
                 },
                 new() {
                     Index = 3,
                     Title = "20+",
                     Caption = "Sponsors",
-                    Icon = "🥰"
+                    Icon = Icon.Cool
                 }
             ]
+        };
+
+        public readonly static Types.Sections.Gallery Gallery = new()
+        {
+
         };
     }
 

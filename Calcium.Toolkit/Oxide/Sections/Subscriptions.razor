@@ -1,5 +1,6 @@
 ﻿@using Calcium.Core.Types
 @using Calcium.Toolkit.Oxide.Layouts
+@using Calcium.Toolkit.Oxide.Components
 
 @if (Parameters != null)
 {
@@ -10,9 +11,9 @@
             @foreach (var item in Parameters.Items.OrderBy((e) => e.Index))
             {
                 <a class="item" href="@item.CTA?.URL" data-featured-item="@item.Featured">
-                    <h1 class="icon">💀</h1>
+                    <Vector Type="item.Icon" Width="60" Height="60" />
 
-                    <h5>@item.Title</h5>
+                    <h5 class="title">@item.Title</h5>
                     <p class="details">@item.Caption</p>
 
                     @if (item.CTA != null) 

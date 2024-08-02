@@ -1,5 +1,6 @@
 ﻿@using Calcium.Core.Types
 @using Calcium.Toolkit.Oxide.Layouts
+@using Calcium.Toolkit.Oxide.Components
 
 @if (Parameters != null)
 {
@@ -8,7 +9,7 @@
             @foreach(var item in Parameters.Items.OrderBy((e) => e.Index))
             {
                 <div class="item" data-featured-item="@item.Featured">
-                    <h2 class="icon">@item.Icon</h2>
+                    <Vector Type="@item.Icon" Width="30" Height="30" />
                     <h2 class="title">@item.Title</h2>
                     <p class="caption">@item.Caption</p>
                 </div>

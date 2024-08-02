@@ -1,8 +1,11 @@
 ﻿<section @attributes="AdditionalAttributes" data-layout="section-with-title">
-    <div class="title-box">
-        <h3 class="title">@Title</h3>
+    @if (!string.IsNullOrEmpty(Title) && !string.IsNullOrEmpty(Caption))
+    {
+        <div class="title-box">
+            <h3 class="title">@Title</h3>
         <p class="caption">@Caption</p>
     </div>
+    }
 
     <div class="content-box">
         @ChildContent

@@ -9,17 +9,17 @@
         height: 100%;
     }
 
-    .animated-emoji[data-emoji-size="xxl"] {
+    .animated-emoji[data-emoji-size="100"] {
         width: 100px;
         height: 100px;
     }
 
-    .animated-emoji[data-emoji-size="xl"] {
-        width: 75px;
-        height: 75px;
+    .animated-emoji[data-emoji-size="65"] {
+        width: 65px;
+        height: 65px;
     }
 
-    .animated-emoji[data-emoji-size="lg"] {
+    .animated-emoji[data-emoji-size="40"] {
         width: 40px;
         height: 40px;
     }

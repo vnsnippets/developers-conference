@@ -1,4 +1,4 @@
-﻿namespace Calcium.Core.Types;
+﻿namespace Calcium.Core.Models;
 
 public static class Widgets
 {

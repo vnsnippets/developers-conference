@@ -1,4 +1,4 @@
-﻿using Calcium.Core.Types;
+﻿using Calcium.Core.Models;
 
 namespace Calcium.Core;
 
@@ -14,16 +14,16 @@ public static class Site
 
     public static class Menus
     {
-        public readonly static List<Types.Lists.Social> Social = [
-            new("facebook", "https://facebook.com", Types.Icon.Facebook),
-            new("instagram", "https://instagram.com", Types.Icon.Instagram),
-            new("linkedin", "https://linkedin.com", Types.Icon.LinkedIn)
+        public readonly static List<Models.Lists.Social> Social = [
+            new("facebook", "https://facebook.com", Models.Icon.Facebook),
+            new("instagram", "https://instagram.com", Models.Icon.Instagram),
+            new("linkedin", "https://linkedin.com", Models.Icon.LinkedIn)
         ];
     }
 
     public static class Sections
     {
-        public readonly static Types.Sections.Hero Hero = new()
+        public readonly static Models.Sections.Hero Hero = new()
         {
             Title = "Developers Conference 2025",
             Subtitles = [
@@ -33,13 +33,13 @@ public static class Site
             CTA = new("LEARN MORE", "#section-cta")
         };
 
-        public readonly static Types.Sections.Cards Subscriptions = new()
+        public readonly static Models.Sections.Cards Subscriptions = new()
         {
             Title = "Join us in 2025!",
             Caption = "We would love to have you onboard as a sponsor or speaker.",
             Items = [
                 new() {
-                    Icon = Icon.Cool,
+                    Icon = "Smilies/Star-Struck.png",
                     Featured = true,
                     //Title = "Embark on the journey with us!",
                     Caption = "Sponsor our community event and help us create lasting impact in the industry on the island.",
@@ -48,7 +48,7 @@ public static class Site
                     Index = 0
                 },
                 new() {
-                    Icon = Icon.Smile,
+                    Icon = "Smilies/Grinning Face with Big Eyes.png",
                     Title = "The floor is yours!",
                     Caption = "Submit a session proposal for our conference and inspire others. Don't miss out!",
                     CTA = new("SUBMIT SESSION", "#"),
@@ -57,7 +57,7 @@ public static class Site
             ]
         };
 
-        public readonly static Types.Sections.Cards Metrics = new()
+        public readonly static Models.Sections.Cards Metrics = new()
         {
             Title = "Throwback to 2024",
             Caption = "Go back in time and re-live last year's conference through pictures.",
@@ -67,25 +67,25 @@ public static class Site
                     Featured = true,
                     Title = "1600+",
                     Caption = "Attendees",
-                    Icon = Icon.Smile
+                    Icon = "Smilies/Partying Face.png"
                 },
                 new() {
                     Index = 1,
                     Title = "80+",
                     Caption = "Speakers",
-                    Icon = Icon.Cool
+                    Icon = "People with professions/Woman Technologist Medium Skin Tone.png"
                 },
                 new() {
                     Index = 2,
                     Title = "70+",
                     Caption = "Sessions",
-                    Icon = Icon.Smile
+                    Icon = "Travel and places/Rocket.png"
                 },
                 new() {
                     Index = 3,
                     Title = "20+",
                     Caption = "Sponsors",
-                    Icon = Icon.Cool
+                    Icon = "Smilies/Smiling Face with Hearts.png"
                 }
             ]
         };
@@ -105,7 +105,7 @@ public static class Site
 
     public static class Widgets
     {
-        public readonly static Types.Widgets.Countdown Countdown = new()
+        public readonly static Models.Widgets.Countdown Countdown = new()
         {
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
             Heading = "Count Every Second Until The Event"

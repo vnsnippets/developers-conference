@@ -1,8 +1,6 @@
-﻿namespace Calcium.Core.Types;
+﻿namespace Calcium.Core.Models;
 
 public enum Icon
 {
-    None,
-    Facebook, Instagram, Github, LinkedIn, X,
-    Cool, StarEyes, Smile
+    None, Facebook, Instagram, Github, LinkedIn, X
 }

@@ -39,7 +39,7 @@
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
     [Parameter]
-    public Calcium.Core.Types.Widgets.Countdown? Parameters { get; set; }
+    public Calcium.Core.Models.Widgets.Countdown? Parameters { get; set; }
 
     private System.Timers.Timer _timer = new System.Timers.Timer(1000);
     private int _days, _hours, _minutes, _seconds = 0;

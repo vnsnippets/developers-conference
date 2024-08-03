@@ -1,6 +1,6 @@
-﻿using static Calcium.Core.Types.Lists;
+﻿using static Calcium.Core.Models.Lists;
 
-namespace Calcium.Core.Types;
+namespace Calcium.Core.Models;
 
 public static class Layouts
 {

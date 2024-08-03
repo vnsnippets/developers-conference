@@ -1,4 +1,4 @@
-﻿@using Calcium.Core.Types
+﻿@using Calcium.Core.Models
 @using Calcium.Toolkit.Oxide.Layouts
 @using Calcium.Toolkit.Oxide.Components
 
@@ -11,7 +11,8 @@
                 @foreach (var item in Parameters.Items.OrderBy((e) => e.Index))
                 {
                     <a class="item" href="@item.CTA?.URL" data-featured-item="@item.Featured">
-                        <Vector Type="item.Icon" Width="60" Height="60" data-animate-scroll="zoom-in-zoom-out" data-animate-delay />
+                        @* <Vector Type="item.Icon" Width="60" Height="60" data-animate-scroll="zoom-in-zoom-out" data-animate-delay /> *@
+                        <AnimatedEmoji Path="@item.Icon" data-emoji-size="xl" data-animate-scroll="zoom-in-zoom-out" />
 
                         <div class="item-body">
                             @if (!string.IsNullOrEmpty(item.Title))

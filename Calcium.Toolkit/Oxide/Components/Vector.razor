@@ -1,4 +1,4 @@
-﻿@using Calcium.Core.Types
+﻿@using Calcium.Core.Models
 @using Calcium.Toolkit.Assets
 @using Calcium.Toolkit.Assets.Emojis
 
@@ -26,14 +26,6 @@
                 <X width="@Width" height="@Height" />
                 break;
 
-            case Icon.Cool:
-                <Calcium.Toolkit.Assets.Smileys.Cool width="@Width" height="@Height" />
-                break;
-
-            case Icon.Smile:
-                <Calcium.Toolkit.Assets.Smileys.Smile width="@Width" height="@Height" />
-                break;
-
             default:
                 break;
         }
@@ -42,7 +34,7 @@
 
 @code {
     [Parameter]
-    public Core.Types.Icon? Type { get; set; }
+    public Core.Models.Icon? Type { get; set; }
 
     [Parameter]
     public int Width { get; set; } = 20;

@@ -1,4 +1,4 @@
-﻿namespace Calcium.Core.Types
+﻿namespace Calcium.Core.Models
 {
     public static class Lists
     {
@@ -18,7 +18,8 @@
         public class Card
         {
             public int Index { get; set; }
-            public Icon Icon { get; set; }
+            //public Icon Icon { get; set; }
+            public string? Icon { get; set; }
             public bool Featured { get; set; } = false;
             public string Title { get; set; } = string.Empty;
             public string Caption { get; set; } = string.Empty;

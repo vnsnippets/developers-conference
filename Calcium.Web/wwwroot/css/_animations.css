@@ -55,6 +55,7 @@
     opacity: 1;
 }
 
+[data-animate="zoom-in-zoom-out"],
 .zoom-in-zoom-out {
     animation: zoom-in-zoom-out 300ms ease-in none;
     animation-delay: 300ms;

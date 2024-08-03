@@ -41,7 +41,7 @@ public static class Site
                 new() {
                     Icon = "Smilies/Star-Struck.png",
                     Featured = true,
-                    //Title = "Embark on the journey with us!",
+                    Title = "Embark on the journey with us!",
                     Caption = "Sponsor our community event and help us create lasting impact in the industry on the island.",
                     Conditions = "Contact us via email to request for sponsorship proposals.",
                     CTA = new("SEND REQUEST NOW", "mailto:vidush.namah@orion-next.com"),
@@ -49,7 +49,7 @@ public static class Site
                 },
                 new() {
                     Icon = "Smilies/Grinning Face with Big Eyes.png",
-                    Title = "The floor is yours!",
+                    //Title = "The floor is yours!",
                     Caption = "Submit a session proposal for our conference and inspire others. Don't miss out!",
                     CTA = new("SUBMIT SESSION", "#"),
                     Index = 1
@@ -73,7 +73,7 @@ public static class Site
                     Index = 1,
                     Title = "80+",
                     Caption = "Speakers",
-                    Icon = "People with professions/Woman Technologist Medium Skin Tone.png"
+                    Icon = "People with professions/Technologist Medium Skin Tone.png"
                 },
                 new() {
                     Index = 2,

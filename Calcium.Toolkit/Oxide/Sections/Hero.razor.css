@@ -66,28 +66,132 @@
 }
 
 /* EMOJI EXPLOSION */
-.hero .emoji-explode {
+.emoji-explode {
     position: absolute;
     object-fit: contain;
+    opacity: 0.50;
 
+    animation: zoom-in-zoom-out 1s ease;
 }
 
-    .hero .emoji-explode.emoji-sm {
+    .emoji-explode.emoji-sm {
         width: 60px;
         height: 60px;
     }
 
-    .hero .emoji-explode.emoji-md {
+    .emoji-explode.emoji-md {
+        width: 60px;
+        height: 60px;
+    }
+
+    .emoji-explode.emoji-lg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .emoji-explode.emoji-xl {
         width: 90px;
         height: 90px;
     }
 
-    .hero .emoji-explode.emoji-lg {
+    /* Positioning Emojis */
+
+    .emoji-explode:nth-child(1) {
+        left: 30%;
+        top: 10%;
+    }
+
+    .emoji-explode:nth-child(2) {
+        right: 30%;
+        top: 10%;
+    }
+
+    .emoji-explode:nth-child(3) {
+        left: 15%;
+        top: 20%;
+    }
+
+    .emoji-explode:nth-child(4) {
+        right: 15%;
+        top: 20%;
+    }
+
+    .emoji-explode:nth-child(5) {
+        left: 20%;
+        top: 40%;
+    }
+
+    .emoji-explode:nth-child(6) {
+        right: 20%;
+        top: 40%;
+    }
+
+    .emoji-explode:nth-child(7) {
+        left: 10%;
+        top: 60%;
+    }
+
+    .emoji-explode:nth-child(8) {
+        right: 10%;
+        top: 60%;
+    }
+
+    .emoji-explode:nth-child(9) {
+        left: 30%;
+        top: 70%;
+    }
+
+    .emoji-explode:nth-child(10) {
+        right: 30%;
+        top: 70%;
+    }
+
+@media screen and (min-width: 600px) {
+    .emoji-explode.emoji-sm {
+        width: 60px;
+        height: 60px;
+    }
+
+    .emoji-explode.emoji-md {
+        width: 60px;
+        height: 60px;
+    }
+
+    .emoji-explode.emoji-lg {
+        width: 90px;
+        height: 90px;
+    }
+  
+    .emoji-explode.emoji-xl {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .emoji-explode.emoji-sm {
+        width: 60px;
+        height: 60px;
+    }
+
+    .emoji-explode.emoji-md {
+        width: 90px;
+        height: 90px;
+    }
+
+    .emoji-explode.emoji-lg {
         width: 120px;
         height: 120px;
     }
 
-    .hero .emoji-explode.emoji-xl {
+    .emoji-explode.emoji-xl {
         width: 150px;
         height: 150px;
     }
+}
+
+@media screen and (min-width: 768px) {
+    .emoji-explode {
+        opacity: 1;
+    }
+}

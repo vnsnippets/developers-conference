@@ -5,21 +5,21 @@
 {
     <section @attributes=AdditionalAttributes class="hero">
         <!-- Emoji Explosion Start -->
-        <img src="@RandomEmojiURL(1)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(30, 40), new Tuple<int, int>(5, 15)) class="emoji-explode emoji-lg" />
-        <img src="@RandomEmojiURL(2)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(65, 70), new Tuple<int, int>(5, 15)) class="emoji-explode emoji-lg" />
+        <img src="@RandomEmojiURL(1)" alt="Emoji for graphical effect" class="emoji-explode emoji-lg" />
+        <img src="@RandomEmojiURL(2)" alt="Emoji for graphical effect" class="emoji-explode emoji-lg" />
 
-        <img src="@RandomEmojiURL(3)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(10, 15), new Tuple<int, int>(10, 20)) class="emoji-explode emoji-md" />
-        <img src="@RandomEmojiURL(4)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(85, 90), new Tuple<int, int>(10, 20)) class="emoji-explode emoji-md" />
+        <img src="@RandomEmojiURL(3)" alt="Emoji for graphical effect" class="emoji-explode emoji-md" />
+        <img src="@RandomEmojiURL(4)" alt="Emoji for graphical effect" class="emoji-explode emoji-md" />
 
-        <img src="@RandomEmojiURL(5)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(20, 25), new Tuple<int, int>(30, 40)) class="emoji-explode emoji-xl" />
-        <img src="@RandomEmojiURL(6)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(65, 70), new Tuple<int, int>(30, 40)) class="emoji-explode emoji-xl" />
+        <img src="@RandomEmojiURL(5)" alt="Emoji for graphical effect" class="emoji-explode emoji-xl" />
+        <img src="@RandomEmojiURL(6)" alt="Emoji for graphical effect" class="emoji-explode emoji-xl" />
 
-        <img src="@RandomEmojiURL(7)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(25, 35), new Tuple<int, int>(60, 75)) class="emoji-explode emoji-md" />
-        <img src="@RandomEmojiURL(8)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(65, 75), new Tuple<int, int>(60, 75)) class="emoji-explode emoji-md" />
+        <img src="@RandomEmojiURL(9)" alt="Emoji for graphical effect" class="emoji-explode emoji-sm" />
+        <img src="@RandomEmojiURL(0)" alt="Emoji for graphical effect" class="emoji-explode emoji-sm" />
 
-        <img src="@RandomEmojiURL(9)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(10, 15), new Tuple<int, int>(60, 75)) class="emoji-explode emoji-sm" />
-        <img src="@RandomEmojiURL(0)" alt="Emoji for graphical effect" style=@AddRandomStylingToEmoji(new Tuple<int, int>(85, 90), new Tuple<int, int>(60, 75)) class="emoji-explode emoji-sm" />
-        <!-- Emoji Explosion Ends -->
+        <img src="@RandomEmojiURL(7)" alt="Emoji for graphical effect" class="emoji-explode emoji-md" />
+        <img src="@RandomEmojiURL(8)" alt="Emoji for graphical effect" class="emoji-explode emoji-md" />
+         <!-- Emoji Explosion Ends -->
 
         <div class="hero-body">
             @if (!string.IsNullOrEmpty(Parameters.Title))
@@ -46,62 +46,24 @@
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
-    private string _baseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/master/.resources/Smilies";
+    private string _baseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/master/.resources";
 
     private Dictionary<int, string[]> _emojis = new Dictionary<int, string[]>([
         new KeyValuePair<int, string[]>(1, [ "Grinning Face", "Grinning Face with Big Eyes", "Grinning Face with Smiling Eyes", "Beaming Face with Smiling Eyes", "Grinning Squinting Face", "Grinning Face with Sweat", "Rolling on the Floor Laughing", "Face with Tears of Joy", "Slightly Smiling Face", "Upside-Down Face" ]),
-    new KeyValuePair<int, string[]>(2, [ "Melting Face", "Winking Face", "Smiling Face with Smiling Eyes", "Smiling Face with Halo", "Smiling Face with Hearts", "Smiling Face with Heart-Eyes", "Star-Struck", "Face Blowing a Kiss", "Kissing Face", "Smiling Face" ]),
-    new KeyValuePair<int, string[]>(3, [ "Kissing Face with Closed Eyes", "Kissing Face with Smiling Eyes", "Smiling Face with Tear", "Face Savoring Food", "Face with Tongue", "Winking Face with Tongue", "Zany Face", "Squinting Face with Tongue", "Money-Mouth Face", "Smiling Face with Open Hands" ]),
-    new KeyValuePair<int, string[]>(4, [ "Face with Hand Over Mouth", "Face with Open Eyes and Hand Over Mouth", "Face with Peeking Eye", "Shushing Face", "Thinking Face", "Saluting Face", "Zipper-Mouth Face", "Face with Raised Eyebrow", "Neutral Face", "Expressionless Face" ]),
-    new KeyValuePair<int, string[]>(5, [ "Face Without Mouth", "Dotted Line Face", "Face in Clouds", "Smirking Face", "Unamused Face", "Face with Rolling Eyes", "Grimacing Face", "Face Exhaling", "Lying Face", "Shaking Face" ]),
-    new KeyValuePair<int, string[]>(6, [ "Head Shaking Horizontally", "Head Shaking Vertically", "Relieved Face", "Pensive Face", "Sleepy Face", "Drooling Face", "Sleeping Face", "Face with Medical Mask", "Face with Thermometer", "Face with Head-Bandage" ]),
-    new KeyValuePair<int, string[]>(7, [ "Hot Face", "Cold Face", "Woozy Face", "Face with Crossed-Out Eyes", "Face with Spiral Eyes", "Exploding Head", "Cowboy Hat Face", "Partying Face", "Disguised Face", "Smiling Face with Sunglasses" ]),
-    new KeyValuePair<int, string[]>(8, [ "Nerd Face", "Face with Monocle", "Confused Face", "Face with Diagonal Mouth", "Worried Face", "Slightly Frowning Face", "Frowning Face", "Face with Open Mouth", "Hushed Face", "Astonished Face" ]),
-    new KeyValuePair<int, string[]>(9, [ "Flushed Face", "Pleading Face", "Face Holding Back Tears", "Frowning Face with Open Mouth", "Anguished Face", "Fearful Face", "Anxious Face with Sweat", "Sad but Relieved Face", "Crying Face", "Loudly Crying Face" ]),
-    new KeyValuePair<int, string[]>(0, [ "Face Screaming in Fear", "Confounded Face", "Persevering Face", "Disappointed Face", "Downcast Face with Sweat", "Weary Face", "Tired Face", "Yawning Face", "Face with Steam From Nose", "Enraged Face" ])
+        new KeyValuePair<int, string[]>(2, [ "Melting Face", "Winking Face", "Smiling Face with Smiling Eyes", "Smiling Face with Halo", "Smiling Face with Hearts", "Smiling Face with Heart-Eyes", "Star-Struck", "Face Blowing a Kiss", "Kissing Face", "Smiling Face" ]),
+        new KeyValuePair<int, string[]>(3, [ "Kissing Face with Closed Eyes", "Kissing Face with Smiling Eyes", "Smiling Face with Tear", "Face Savoring Food", "Face with Tongue", "Winking Face with Tongue", "Zany Face", "Squinting Face with Tongue", "Money-Mouth Face", "Smiling Face with Open Hands" ]),
+        new KeyValuePair<int, string[]>(4, [ "Face with Hand Over Mouth", "Face with Open Eyes and Hand Over Mouth", "Face with Peeking Eye", "Shushing Face", "Thinking Face", "Saluting Face", "Zipper-Mouth Face", "Face with Raised Eyebrow", "Neutral Face", "Expressionless Face" ]),
+        new KeyValuePair<int, string[]>(5, [ "Face Without Mouth", "Dotted Line Face", "Smiling Face with Horns", "Smirking Face", "Unamused Face", "Face with Rolling Eyes", "Grimacing Face", "Face Exhaling", "Lying Face", "Shaking Face" ]),
+        new KeyValuePair<int, string[]>(6, [ "Angry Face", "Face in Clouds", "Relieved Face", "Pensive Face", "Sleepy Face", "Drooling Face", "Sleeping Face", "Face with Medical Mask", "Face with Thermometer", "Face with Head-Bandage" ]),
+        new KeyValuePair<int, string[]>(7, [ "Hot Face", "Cold Face", "Woozy Face", "Face with Crossed-Out Eyes", "Face with Spiral Eyes", "Exploding Head", "Cowboy Hat Face", "Partying Face", "Disguised Face", "Smiling Face with Sunglasses" ]),
+        new KeyValuePair<int, string[]>(8, [ "Nerd Face", "Face with Monocle", "Confused Face", "Face with Diagonal Mouth", "Worried Face", "Slightly Frowning Face", "Frowning Face", "Face with Open Mouth", "Hushed Face", "Astonished Face" ]),
+        new KeyValuePair<int, string[]>(9, [ "Flushed Face", "Pleading Face", "Face Holding Back Tears", "Frowning Face with Open Mouth", "Anguished Face", "Fearful Face", "Anxious Face with Sweat", "Sad but Relieved Face", "Crying Face", "Loudly Crying Face" ]),
+        new KeyValuePair<int, string[]>(0, [ "Face Screaming in Fear", "Confounded Face", "Persevering Face", "Disappointed Face", "Downcast Face with Sweat", "Weary Face", "Tired Face", "Yawning Face", "Face with Steam From Nose", "Enraged Face" ])
     ]);
 
     private string RandomEmojiURL(int quadrant)
     {
         var rnd = new Random();
-        return $"{_baseURL}/{_emojis[quadrant][rnd.Next(0, _emojis.Count)]}.png";
-
+        return $"{_baseURL}/Smilies/{_emojis[quadrant][rnd.Next(0,10)]}.png";
     }
-
-    private string AddRandomStylingToEmoji(Tuple<int, int> XLimits, Tuple<int, int> YLimits)
-    {
-        var rnd = new Random();
-        var X = rnd.Next(XLimits.Item1, XLimits.Item2);
-        var Y = rnd.Next(YLimits.Item1, YLimits.Item2);
-        var R = rnd.Next(-30, 30);
-
-        return $"left:{X}%;top:{Y}%;transform:rotate({R}deg);";
-    }
-
-    // private record ImageSource(string URL, Tuple<int, int> xy)
-    // {
-    //     public Guid Id { get; set; } = Guid.NewGuid();
-    //     public int X { get; set; } = xy.Item1;
-    //     public int Y { get; set; } = xy.Item2;
-    //     public bool Loaded { get; set; } = false;
-    // }
-
-    
-
-    // private List<ImageSource> ImageSources = [];
-
-    // private Tuple<int, int> GenerateRandomPositionWithoutCollision(Tuple<int, int> XLimits, Tuple<int, int> YLimits)
-    // {
-    //     var rnd = new Random();
-
-    //     var X = rnd.Next(XLimits.Item1, XLimits.Item2);
-    //     var Y = rnd.Next(YLimits.Item1, YLimits.Item2);
-
-    //     return new(X, Y);
-    // }
-
-    // private string PositionEmojiInStyleTag(Tuple<int, int> XLimits, Tuple<int, int> YLimits)
-    // {
-    //     return $"position:absolute;left:{item.X}%;top:{item.Y}%;";
-    // }
 }

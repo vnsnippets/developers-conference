@@ -22,6 +22,7 @@
 }
 
 body {
+    position: relative;
     background: var(--secondary-300);
 
     min-height: 100vh;

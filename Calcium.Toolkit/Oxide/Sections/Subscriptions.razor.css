@@ -6,6 +6,7 @@
 }
 
     .subscription-items .item {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -19,7 +20,9 @@
         text-decoration: none;
         cursor: pointer;
         min-width: 180px;
+        transition: all 500ms ease-out;
     }
+
     .subscription-items .item .item-body {
         display: flex;
         flex-direction: column;
@@ -39,6 +42,25 @@
             background: linear-gradient(150deg, var(--gradient-highlight-stop-1), var(--gradient-highlight-stop-2));
             color: var(--primary-contrast);
         }
+
+            .subscription-items .item[data-featured-item]::after {
+                content: ' ';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: var(--gradient-highlight-stop-2);
+                opacity: 0;
+                transition: all 300ms ease-out;
+                z-index: -1;
+                border-radius: 0.5rem;
+            }
+
+            .subscription-items .item[data-featured-item]:hover::after {
+                transition: all 300ms ease-out;
+                opacity: 1;
+            }
 
         .subscription-items .item .title {
             margin: 0.75rem 0 0;

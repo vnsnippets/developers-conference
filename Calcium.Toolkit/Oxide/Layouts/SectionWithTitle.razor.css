@@ -16,7 +16,7 @@
 
     [data-layout="section-with-title"] .title-box .caption {
         margin: 0;
-        font-size: var(--fs-200);
+        font-size: var(--fs-150);
     }
 
 [data-layout="section-with-title"] .content-box {

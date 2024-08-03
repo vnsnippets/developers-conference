@@ -64,3 +64,30 @@
         height: 45rem;
     }
 }
+
+/* EMOJI EXPLOSION */
+.hero .emoji-explode {
+    position: absolute;
+    object-fit: contain;
+
+}
+
+    .hero .emoji-explode.emoji-sm {
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero .emoji-explode.emoji-md {
+        width: 90px;
+        height: 90px;
+    }
+
+    .hero .emoji-explode.emoji-lg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero .emoji-explode.emoji-xl {
+        width: 150px;
+        height: 150px;
+    }

@@ -46,8 +46,36 @@ main {
     display: none;
 }
 
+/* EMOJI LOADING BAR */
+#emoji-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 0.25rem;
+}
+
+    #emoji-loading img {
+        width: 40px;
+        height: 40px;
+        animation: bounce 1s ease-in;
+        animation-iteration-count: infinite;
+    }
+
+    #emoji-loading img:nth-of-type(2) {
+        animation-delay: 0.15s;
+    }
+
+        #emoji-loading img:nth-of-type(3) {
+            animation-delay: 0.3s;
+        }
+
+        #emoji-loading img:nth-of-type(4) {
+            animation-delay: 0.45s;
+        }
+
 /* DEFAULT BLAZOR STYLES */
-.blazor-loading {
+/*.blazor-loading {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +129,7 @@ main {
             stroke: var(--secondary-600);
             stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
             transition: stroke-dasharray 0.05s ease-in-out;
-        }
+        }*/
 /*
         .blazor-loading::after {
             position: absolute;

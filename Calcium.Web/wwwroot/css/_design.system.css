@@ -18,6 +18,7 @@
     --secondary-200: #FEF9EB;
     --secondary-300: #FEF8E6;
     --secondary-400: #FFEFBE;
+    --secondary-450: #FDD788;
     --secondary-500: #FFC857;
     --secondary-600: #F6A912;
     --secondary-700: #FC8154;
@@ -50,6 +51,7 @@
     --fs-400: 1.25rem;
     --fs-300: 1.15rem;
     --fs-200: 1rem;
+    --fs-150: 1rem;
     --fs-100: 1rem;
     --fs-50: 0.65rem;
     /* Line Heights */
@@ -74,7 +76,8 @@ html {
         --fs-400: 1.375rem;
         --fs-300: 1.25rem;
         --fs-200: 1rem;
-        --fs-100: 0.85rem;
+        --fs-150: 1rem;
+        --fs-100: 1rem;
         --fs-50: 0.65rem;
     }
 }
@@ -88,6 +91,7 @@ html {
         --fs-400: 1.9rem;
         --fs-300: 1.5rem;
         --fs-200: 1.25rem;
+        --fs-150: 1.10rem;
         --fs-100: 1rem;
         --fs-50: 0.85rem;
     }

@@ -32,7 +32,7 @@
         }
 
         .subscription-items .item:not([data-featured-item]):hover {
-            background: var(--secondary-500);
+            background: var(--secondary-450);
         }
 
         .subscription-items .item[data-featured-item] {
@@ -41,7 +41,7 @@
         }
 
         .subscription-items .item .title {
-            margin: 0.75rem 0 0;
+            margin: 0rem 0 0;
         }
 
         .subscription-items .item .details {

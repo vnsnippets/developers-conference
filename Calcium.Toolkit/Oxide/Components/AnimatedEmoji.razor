@@ -4,7 +4,7 @@
 @if (!string.IsNullOrEmpty(Path))
 {
     <span class="animated-emoji" @attributes=AdditionalAttributes>
-        <img src="https://raw.githubusercontent.com/vnsnippets/developers-conference/master/.resources/@Path" alt="@Name" />
+        <img src="@_baseURL/@Path" alt="@Name" />
     </span>
 }
 
@@ -17,6 +17,8 @@
 
     // [Parameter]
     // public int Height { get; set; } = 20;
+
+    private string _baseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/master/.resources";
 
     [Parameter]
     public string? Path { get; set; }

@@ -78,7 +78,7 @@
 
 html {
     min-width: 360px;
-    font-family: 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, Geneva, Verdana, sans-serif;
+    font-family: 'Lato', 'Segoe UI', -apple-system, BlinkMacSystemFont, Geneva, Verdana, sans-serif;
     font-size: var(--fs-100);
     font-weight: 400;
     line-height: 1.4;

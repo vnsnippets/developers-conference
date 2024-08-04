@@ -9,7 +9,7 @@
 }
 
 @code {
-    private string _baseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/master/.resources";
+    private string _baseURL = Calcium.Core.Site.ResourcesBaseURL;
 
     [Parameter]
     public string? Path { get; set; }

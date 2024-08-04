@@ -5,6 +5,7 @@ namespace Calcium.Core;
 public static class Site
 {
     public readonly static string Title = "Calcium Site";
+    public readonly static string ResourcesBaseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/release/resources/.resources";
     public static class Brand
     {
         public readonly static string Label = "Developers Conference";

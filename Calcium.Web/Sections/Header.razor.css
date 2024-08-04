@@ -63,20 +63,29 @@
         filter: drop-shadow(0 4px 4px #00000050);
     }
 
-@media screen and (min-width: 768px) {
-    .hero {
-        height: 45rem;
-    }
-}
-
 .hero .hero-body h1 .inline-block {
-    display: inline-block;
+    display: block;
 }
 
 .hero .hero-body h1 .emoji-inline img {
     width: var(--fs-600);
     height: var(--fs-600);
-    margin-right: -0.5rem;
-    margin-left: 0.25rem;
-    margin-bottom: -0.25rem;
+}
+
+    .hero .hero-body h1 .emoji-inline img {
+        margin-right: -0.25rem;
+        margin-left: 0.25rem;
+        margin-bottom: -0.2rem;
+    }
+
+@media screen and (min-width: 768px) {
+    .hero {
+        height: 45rem;
+    }
+
+        .hero .hero-body h1 .emoji-inline img {
+            margin-right: -0.5rem;
+            margin-left: 0.25rem;
+            margin-bottom: -0.25rem;
+        }
 }

@@ -38,7 +38,7 @@
                 display: flex;
                 align-items: start;
                 font-size: var(--fs-550);
-                margin: 0 0.5rem;
+                margin: 0 0.35rem;
             }
 
             .countdown-widget .countdown-container .count-wrap .ticker {
@@ -49,7 +49,9 @@
             }
 
 
-                .countdown-widget .countdown-container .count-wrap .ticker h1 {
+                .countdown-widget .countdown-container .count-wrap .ticker p {
+                    font-size: var(--fs-600);
+                    font-weight: 600;
                     margin: 0;
                 }
 
@@ -79,6 +81,6 @@
     }
 
         .countdown-widget .countdown-container .count-wrap:not(:last-of-type)::after {
-            margin: 0 2rem;
+            margin: 0 1.5rem;
         }
 }

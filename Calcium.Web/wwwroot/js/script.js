@@ -11,10 +11,28 @@
     });
 
     const DOMObserver = new MutationObserver(() => {
+        console.log(`[${new Date()}] Mutation detected.`);
+
         const AnimatedElements = document.querySelectorAll("[data-animate-scroll]");
         AnimatedElements.forEach((element) => AnimateObserver.observe(element));
 
-        console.log(`[${new Date()}] Mutation detected.`);
+        var easterEgg = 0;
+
+        document.querySelector("[data-easter-egg]").addEventListener("click", () => {
+            easterEgg++;
+
+            if (easterEgg >= 5) {
+                if (document.querySelector("html").dataset.theme == "dark")
+                    document.querySelector("html").dataset.theme = "light"
+                else document.querySelector("html").dataset.theme = "dark"
+
+                easterEgg = 0;
+            }
+
+            setTimeout(() => {
+                easterEgg = 0;
+            }, 2000);
+        })
     });
 
     DOMObserver.observe(document.querySelector("body"), {

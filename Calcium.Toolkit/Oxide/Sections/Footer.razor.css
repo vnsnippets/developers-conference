@@ -3,13 +3,14 @@
     align-items: center;
     justify-content: center;
 
-    border-top: 1px solid var(--body-300);
+    /*border-top: 1px solid var(--body-300);*/
 
-    margin: 3rem 1rem 0;
+    margin: 1rem 1rem 1rem;
 }
 
     .site-footer * {
         margin: 1.5rem 0;
         color: var(--body-400);
         font-size: var(--fs-50);
+        cursor: default;
     }

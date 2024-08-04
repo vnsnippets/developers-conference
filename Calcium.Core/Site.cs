@@ -112,7 +112,7 @@ public static class Site
         public readonly static Models.Widgets.Countdown Countdown = new()
         {
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
-            Heading = "Count Every Second Until The Event"
+            Heading = "Count #{Every Second}# Until The Event"
         };
     }
 }

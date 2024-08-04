@@ -1,9 +1,16 @@
 ﻿@using Calcium.Core;
+@using System.Text.RegularExpressions
 
 @if (Parameters != null)
 {
     <div class="countdown-widget" @attributes=AdditionalAttributes>
-        <h5>@Parameters.Heading</h5>
+        <h5>
+            @foreach (var token in SplitTokensInString(@Parameters.Heading))
+            {
+                @RenderFragmentAsStringOrImage(token)
+                ;
+            }
+        </h5>
         <div class="countdown-container">
 
             <div class="count-wrap">
@@ -46,13 +53,13 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _timer.Elapsed += (sender, eventArgs) => countdown();
+        _timer.Elapsed += (sender, eventArgs) => RunCountdown();
         _timer.Start();
 
         await base.OnInitializedAsync();
     }
 
-    private void countdown()
+    private void RunCountdown()
     {
         if (Parameters != null && Parameters.Deadline > DateTime.Now)
         {
@@ -69,5 +76,22 @@
             Parameters = null;
             _timer.Stop();
         }
+    }
+
+    private List<string> SplitTokensInString(string htmlString)
+    {
+        var pattern = @"#(.*?)#";
+        var matches = Regex.Split(htmlString, pattern);
+
+        return new List<string>(matches);
+    }
+
+    private RenderFragment RenderFragmentAsStringOrImage(string token)
+    {
+        var tokenPattern = @"{(.*?)}";
+        var match = Regex.Match(token, tokenPattern);
+
+        if (match.Success) return@<span class="highlight">@match.Groups[1]</span>;
+        else return @<span>@token</span>;
     }
 }

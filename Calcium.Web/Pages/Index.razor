@@ -3,10 +3,12 @@
 @using Calcium.Core
 @using Calcium.Toolkit.Oxide.Sections
 @using Calcium.Toolkit.Oxide.Widgets
+@using Calcium.Web.Sections
 
 <PageTitle>Calcium | Home</PageTitle>
 
-<Hero id="hero-section" Parameters="@Site.Sections.Hero" />
+@* <Hero id="hero-section" Parameters="@Site.Sections.Hero" /> *@
+<Header Title=@Site.Sections.Hero.Title Caption=@Site.Sections.Hero.Captions CTA=@Site.Sections.Hero.CTA />
 <Countdown Parameters="@Site.Widgets.Countdown" data-animate-load />
 <Subscriptions id="section-cta" Parameters="@Site.Sections.Subscriptions" data-animate-scroll="drop-in" />
 

@@ -25,8 +25,11 @@ public static class Site
     {
         public readonly static Models.Sections.Hero Hero = new()
         {
-            Title = "Developers Conference 2025",
-            Subtitles = [
+            Title = [ 
+                "Devel#{Smilies/Face with Open Mouth | O}#pers", 
+                "C#{Smilies/Nerd Face | O}#nference",
+                "#{Symbols/Keycap Digit Two | 2}##{Symbols/Keycap Digit Zero | 0}##{Symbols/Keycap Digit Two | 2}##{Symbols/Keycap Digit Five | 5}#" ],
+            Captions = [
                 "24, 25 & 26 July 2025",
                 "Caudan Art Centre"
             ],

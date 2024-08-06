@@ -1,4 +1,4 @@
-﻿@using Calcium.Core.Models
+﻿@using Calcium.Core.Models.Sections
 @using Calcium.Toolkit.Oxide.Layouts
 @using Calcium.Toolkit.Oxide.Components
 
@@ -21,7 +21,7 @@
 
 @code {
     [Parameter]
-    public Sections.Cards? Parameters { get; set; }
+    public Cards? Parameters { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

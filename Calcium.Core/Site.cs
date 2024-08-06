@@ -15,10 +15,10 @@ public static class Site
 
     public static class Menus
     {
-        public readonly static List<Models.Lists.Social> Social = [
-            new("facebook", "https://facebook.com", Models.Icon.Facebook),
-            new("instagram", "https://instagram.com", Models.Icon.Instagram),
-            new("linkedin", "https://linkedin.com", Models.Icon.LinkedIn)
+        public readonly static List<Lists.Social> Social = [
+            new("facebook", "https://facebook.com", Icon.Facebook),
+            new("instagram", "https://instagram.com", Icon.Instagram),
+            new("linkedin", "https://linkedin.com", Icon.LinkedIn)
         ];
     }
 
@@ -30,13 +30,15 @@ public static class Site
                 "Devel#{Smilies/Face with Open Mouth | O}#pers",
                 "C#{Smilies/Nerd Face | O}#nference",
                 "2025"
-                //"#{Symbols/Keycap Digit Two | 2}##{Symbols/Keycap Digit Zero | 0}##{Symbols/Keycap Digit Two | 2}##{Symbols/Keycap Digit Five | 5}#"
-],
+            ],
             Captions = [
                 "24, 25 & 26 July 2025",
                 "Caudan Art Centre"
             ],
-            CTA = new("LEARN MORE", "#section-cta")
+            CTA = [
+                new("Become A Sponsor", "mailto:vidush.namah@orion-next.com", "primary"),
+                new("Submit Session", "#section-cta")
+            ]
         };
 
         public readonly static Models.Sections.Cards Subscriptions = new()
@@ -50,16 +52,24 @@ public static class Site
                     Title = "Support the event!",
                     Caption = "Sponsor our community event and help us create lasting impact in the industry on the island.",
                     Conditions = "Contact us via email to request for sponsorship proposals.",
-                    CTA = new("SEND REQUEST NOW", "mailto:vidush.namah@orion-next.com"),
+                    Link = "mailto:vidush.namah@orion-next.com",
                     Index = 0
                 },
                 new() {
                     Icon = "Smilies/Grinning Face with Big Eyes.png",
-                    Title = "The floor is yours!",
+                    Title = "Become a speaker!",
                     Caption = "Submit a session proposal for our conference and become a speaker. Don't miss out!",
                     Conditions = "We look forward to have you join our line up soon.",
-                    CTA = new("SUBMIT SESSION", "#"),
+                    Link = "#",
                     Index = 1
+                },
+                new() {
+                    Icon = "Smilies/Smiling Face with Heart-Eyes.png",
+                    Title = "Join the waitlist",
+                    Caption = "Be the first to know when our registration for the conference opens next year.",
+                    Conditions = "Our team will send you an email inviting you to register as an attendee.",
+                    Link = "#",
+                    Index = 2
                 }
             ]
         };
@@ -117,5 +127,10 @@ public static class Site
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
             Heading = "Count #{Every Second}# Until The Event"
         };
+    }
+
+    public static class Footer
+    {
+        public readonly static string Message = "MSCC DEVELOPERS CONFERENCE 2025";
     }
 }

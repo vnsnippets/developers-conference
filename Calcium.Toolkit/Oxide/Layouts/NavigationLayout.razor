@@ -20,7 +20,7 @@
                     {
                         <li>
                             <a class="button small icon secondary-400" href="@item.URL">
-                                <Vector Type="item.Type" />
+                                <Vector Type="item.Icon" />
                             </a>
                         </li>
                     }
@@ -34,7 +34,7 @@
     @Body
 </section>
 
-<Footer Message="DEVELOPMENT IN PROGRESS | VIDUSH H. NAMAH" />
+<Footer Message="@Site.Footer.Message" />
 
 @code {
     public List<Calcium.Core.Models.Lists.Social> Links = Site.Menus.Social;

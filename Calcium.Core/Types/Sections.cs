@@ -1,27 +1,29 @@
 ﻿using static Calcium.Core.Models.Lists;
 
-namespace Calcium.Core.Models;
-
-public static class Layouts
+namespace Calcium.Core.Models
 {
-    public class SectionWithTitleParameters
-    {
-        public string Title { get; set; } = string.Empty;
-        public string Caption { get; set; } = string.Empty;
-    }
-}
 
-public static class Sections
-{
-    public class Hero
+    public static class Layouts
     {
-        public string[] Title { get; set; } = [];
-        public string[] Captions { get; set; } = [];
-        public Link? CTA { get; set; }
+        public class SectionWithTitleParameters
+        {
+            public string Title { get; set; } = string.Empty;
+            public string Caption { get; set; } = string.Empty;
+        }
     }
 
-    public class Cards : Layouts.SectionWithTitleParameters
+    namespace Sections
     {
-        public List<Card> Items { get; set; } = [];
+        public class Hero
+        {
+            public string[] Title { get; set; } = [];
+            public string[] Captions { get; set; } = [];
+            public Link[] CTA { get; set; } = [];
+        }
+
+        public class Cards : Layouts.SectionWithTitleParameters
+        {
+            public List<Card> Items { get; set; } = [];
+        }
     }
 }

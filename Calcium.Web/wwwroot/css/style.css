@@ -47,6 +47,11 @@ main {
     display: none;
 }
 
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
 /* EMOJI LOADING BAR */
 #emoji-loading {
     position: fixed;

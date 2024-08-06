@@ -1,4 +1,5 @@
 ﻿@using Calcium.Core.Models
+@using Calcium.Core.Models.Sections
 @using Calcium.Toolkit.Oxide.Layouts
 @using Calcium.Toolkit.Oxide.Components
 
@@ -10,7 +11,7 @@
             <div class="subscription-items">
                 @foreach (var item in Parameters.Items.OrderBy((e) => e.Index))
                 {
-                    <a class="item" href="@item.CTA?.URL" data-featured-item="@item.Featured">
+                    <a class="item" href="@item.Link" data-featured-item="@item.Featured">
                         @* <Vector Type="item.Icon" Width="60" Height="60" data-animate-scroll="zoom-in-zoom-out" data-animate-delay /> *@
                         <AnimatedEmoji Path="@item.Icon" data-emoji-size="65" data-animate-scroll="zoom-in-zoom-out" />
 
@@ -29,11 +30,6 @@
                             {
                                 <p class="small">@item.Conditions</p>
                             }
-
-                            @if (item.CTA != null)
-                            {
-                                <p class="cta">@item.CTA.Name</p>
-                            }
                         </div>
                     </a>
                 }
@@ -44,7 +40,7 @@
 
 @code {
     [Parameter]
-    public Sections.Cards? Parameters { get; set; }
+    public Cards? Parameters { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

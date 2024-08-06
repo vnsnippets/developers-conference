@@ -23,8 +23,7 @@
     }
 
     .metrics-items .item[data-featured-item] {
-        background: var(--body-500);
-        color: var(--body-contrast);
+        background: var(--secondary-500);
     }
 
         .metrics-items .item .title {

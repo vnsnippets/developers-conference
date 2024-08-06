@@ -3,27 +3,21 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');*/
 
 html[data-theme="dark"] {
-    
     /* Primary Colors */
-    --primary-500: #FFC857;
-
+    --primary-500: #fdec96;
+    --primary-600: #FFC857;
+    
     /* Secondary Colors */
-    --secondary-300: #010409;
-    --secondary-450: #292f36;
+    --secondary-300: #0e141b;
     --secondary-400: #161b22;
-    --secondary-500: #295BCE;
-    --secondary-600: #FFDA64;
-
+    --secondary-500: #292f36;
     /* Body Colors */
     --body-400: #8d96a0;
     --body-500: #d9ede6;
-
     /* Contrast Colors */
     --primary-contrast: #212529;
     --secondary-contrast: #d9ede6;
-
     --body-contrast: #212529;
-
     /* Gradient Colors */
     --gradient-highlight-stop-1: #FFDA64;
     --gradient-highlight-stop-2: #FF4BA7;
@@ -186,13 +180,14 @@ small {
 .button {
     border-radius: var(--border-radius);
     padding: 0.75rem 1rem;
-    font-weight: 600;
+    font-weight: 500;
     font-size: var(--fs-100);
 
     display: flex;
     align-items: center;
     justify-content: center;
     
+    text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
 
@@ -201,7 +196,7 @@ small {
 }
 
 .button:hover {
-    transform: scale(1.05);
+    transform: scale(1.025);
 }
 
 .button:active {
@@ -301,13 +296,13 @@ small {
 
 .button.primary:hover, .button.primary-500:hover,
 .button.primary:active, .button.primary-500:active {
-    background-color: var(--primary-700);
+    background-color: var(--primary-600);
     color: var(--primary-contrast);
 }
 
 .button.primary-600:hover,
 .button.primary-600:active {
-    background-color: var(--primary-800);
+    background-color: var(--primary-700);
     color: var(--primary-contrast);
 }
 

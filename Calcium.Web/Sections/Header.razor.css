@@ -1,6 +1,4 @@
 ﻿.hero {
-    --background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='1200' height='800' viewBox='0 0 1200 800' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 0H1200V800H0V0Z' fill='%23295BCE'/><path d='M0 504.797V0H1200V504.797C1029.92 623.428 823.087 693 600 693C376.913 693 170.075 623.428 0 504.797Z' fill='%232D64E3'/></svg>");
-    /*--background-image: url("/images/caudan.webp");*/
     position: relative;
     display: flex;
     align-items: center;
@@ -8,14 +6,31 @@
     flex-direction: column;
     border-radius: 1rem;
     overflow: hidden;
-    height: 40rem;
-    /*    background-image: var(--background-image);
-    background-size: cover;*/
+    padding-top: 6rem;
+    min-height: 30rem;
 }
 
-    .hero h1,
+    .hero h1 {
+        background: linear-gradient(to right, #54acff, #b676fe);
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        font-family: 'Bevan', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: var(--lh-600);
+        font-weight: 400;
+        max-width: 30rem;
+        margin: 0 1rem 2rem;
+        text-transform: uppercase;
+        word-break: break-word;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
     .hero h3 {
         color: var(--white);
+        margin: 0;
     }
 
 
@@ -24,9 +39,6 @@
         background-size: cover;
         background-position: bottom center;
 
-        /*background: var(--secondary-700);*/
-        /*filter: blur(10px);*/
-        /*opacity: 0.65;*/
         content: '';
         position: absolute;
         top: 0;
@@ -50,24 +62,6 @@
         z-index: 1;
     }
 
-    .hero h1 {
-        font-family: 'Bevan', 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: var(--lh-600);
-        font-weight: 400;
-        max-width: 30rem;
-        margin: 0 1rem 2rem;
-        text-transform: uppercase;
-        word-break: break-word;
-        text-align: center;
-        word-wrap: break-word;
-        filter: drop-shadow(0 4px 4px #00000050);
-    }
-
-    .hero h3 {
-        margin: 0;
-        filter: drop-shadow(0 4px 4px #00000050);
-    }
-
 .hero .hero-body h1 .inline-block {
     display: block;
 }
@@ -83,14 +77,14 @@
         margin-bottom: -0.2rem;
     }
 
-@media screen and (min-width: 768px) {
-    .hero {
-        height: 45rem;
+    .hero .hero-body .cta-container {
+        margin-top:var(--margin-400);
     }
 
-        .hero .hero-body h1 .emoji-inline img {
-            margin-right: -0.5rem;
-            margin-left: 0.25rem;
-            margin-bottom: -0.25rem;
-        }
-}
+            @media screen and (min-width: 768px) {
+                .hero .hero-body h1 .emoji-inline img {
+                    margin-right: -0.5rem;
+                    margin-left: 0.25rem;
+                    margin-bottom: -0.25rem;
+                }
+            }

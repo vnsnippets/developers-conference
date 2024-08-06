@@ -2,68 +2,42 @@
 @using System.Linq
 @using static Calcium.Core.Models.Lists
 
-<section @attributes=AdditionalAttributes class="hero">
-    <div class="hero-body">
-        <h1 class="title contrast">
-            @foreach(var item in Title) {
-                <span class="inline-block">
-                @foreach(var token in SplitTokensInString(item))
-                {
-                    @RenderFragmentAsStringOrImage(token);
+@if (Parameters != null)
+{
+    <section @attributes=AdditionalAttributes class="hero">
+        <div class="hero-body">
+            <h1 class="title contrast">
+                @foreach(var item in Parameters.Title) {
+                    <span class="inline-block">
+                    @foreach(var token in SplitTokensInString(item))
+                    {
+                        @RenderFragmentAsStringOrImage(token);
+                    }
+                    </span>
                 }
-                </span>
-            }
-        </h1>
+            </h1>
 
-        @foreach (var line in Caption)
-        {
-            <h3 class="contrast">@line</h3>
-        }
-@* 
-        @if (CTA != null)
-        {
-            <a class="button secondary-500 mt-3" href="@CTA.URL">@CTA.Name</a>
-        } *@
-    </div>
-</section>
+            @foreach (var line in Parameters.Captions)
+            {
+                <h3 class="contrast">@line</h3>
+            }
+
+            <div class="flex cta-container">
+            @foreach (var cta in Parameters.CTA)
+            {
+                <a class="button cta @(cta.Type ?? "secondary-400")" href="@cta.URL">@cta.Name</a>
+            }
+            </div>
+        </div>
+    </section>
+}
 
 @code {
-    /// <summary>
-    /// Value can contain tokens as #TOKEN# which represents an emoji name to replace a character
-    /// </summary>
     [Parameter]
-    public string[] Title { get; set; } = [];
-
-    /// <summary>
-    /// Value can contain tokens as #TOKEN# which represents an emoji name to replace a character
-    /// </summary>
-    [Parameter]
-    public string[] Caption { get; set; } = [];
-
-    [Parameter]
-    public Link? CTA { get; set; }
+    public Calcium.Core.Models.Sections.Hero? Parameters { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
-
-    // private RenderFragment[] RenderTokensInString(string htmlString)
-    // {
-    //     var pattern = @"#(.*?)#";
-    //     var matches = Regex.Split(htmlString, pattern);
-
-    //     RenderFragment[] fragments = [];
-
-    //     Array.ForEach(matches, (token) =>
-    //     {
-    //         var tokenPattern = @"{(.*?)}";
-    //         var match = Regex.Match(token, tokenPattern);
-
-    //         if (match.Success) fragments.Append(@<span class="emoji-inline"><img src=$"{_baseURL}/{match.Groups[0]}.png" alt="Inline Emoji" /></span>);
-    //         else fragments.Append(@<span class="inline-text">token</span>);
-    //     });
-
-    //     return fragments;
-    // }
 
     private string _baseURL = Calcium.Core.Site.ResourcesBaseURL;
 

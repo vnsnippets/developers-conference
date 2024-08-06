@@ -6,8 +6,9 @@
     flex-direction: column;
     border-radius: 1rem;
     overflow: hidden;
-    padding-top: 6rem;
     min-height: 30rem;
+    padding-top: 6rem;
+    gap: 3rem;
 }
 
     .hero h1 {
@@ -31,20 +32,6 @@
     .hero h3 {
         color: var(--white);
         margin: 0;
-    }
-
-
-    .hero::before {
-        background-image: var(--background-image);
-        background-size: cover;
-        background-position: bottom center;
-
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
     }
 
     .hero .overlay {
@@ -92,5 +79,9 @@
                     margin-right: -0.5rem;
                     margin-left: 0.25rem;
                     margin-bottom: -0.25rem;
+                }
+
+                .hero {
+                    min-height: 40rem;
                 }
             }

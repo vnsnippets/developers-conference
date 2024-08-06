@@ -29,6 +29,8 @@
             }
             </div>
         </div>
+
+        @ChildContent
     </section>
 }
 
@@ -38,6 +40,9 @@
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
 
     private string _baseURL = Calcium.Core.Site.ResourcesBaseURL;
 

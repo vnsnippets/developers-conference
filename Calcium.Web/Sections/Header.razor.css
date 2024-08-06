@@ -77,9 +77,15 @@
         margin-bottom: -0.2rem;
     }
 
-    .hero .hero-body .cta-container {
-        margin-top:var(--margin-400);
-    }
+        .hero .hero-body .cta-container {
+            margin-top: var(--margin-400);
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero .hero-body .cta-container > * {
+            min-width: 3rem;
+        }
 
             @media screen and (min-width: 768px) {
                 .hero .hero-body h1 .emoji-inline img {

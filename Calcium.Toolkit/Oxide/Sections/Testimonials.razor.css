@@ -1,0 +1,91 @@
+.testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+    .testimonials[data-icon-margin] {
+        padding-top: 2rem;
+    }
+
+    .testimonials a {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        position: relative;
+        color: var(--body-500);
+        font-size: var(--fs-100);
+        text-decoration: none;
+        background: var(--secondary-400);
+        border-radius: 0.5rem;
+        opacity: 0.4;
+    }
+
+        .testimonials a:hover,
+        .testimonials a:active {
+            background: var(--secondary-500);
+        }
+
+        .testimonials a .testimonial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex: 1;
+            margin: 2.5rem;
+        }
+
+            .testimonials a .testimonial .quote {
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .testimonials a .testimonial .icon {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -2rem;
+                display: flex;
+                justify-content: center;
+            }
+
+            .testimonials a .testimonial .author {
+                position: relative;
+                width: 95%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 1rem;
+                padding-top: 1rem;
+            }
+
+                .testimonials a .testimonial .author::before {
+                    content: ' ';
+                    position: absolute;
+                    top: 0;
+                    left: 45%;
+                    right: 45%;
+                    display: flex;
+                    justify-content: center;
+                    border-top: 2px solid var(--body-300);
+                    opacity: 0.75;
+                }
+
+                /*
+                .testimonials a .testimonial .author .image {
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 3rem;
+                }*/
+
+                .testimonials a .testimonial .author .details {
+                    text-align: center;
+                }
+
+    .testimonials a:nth-child(2) {
+        opacity: 1;
+    }

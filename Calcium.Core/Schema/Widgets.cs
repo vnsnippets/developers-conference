@@ -56,4 +56,15 @@ namespace Calcium.Core.Schema.Widgets
         public string? Placeholder { get; set; }
         public string? CTA { get; set; }
     }
+
+    public class Testimonial
+    {
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string? Author { get; set; }
+        public string? Quote { get; set; }
+        public string? Credentials { get; set; }
+        public string? Source { get; set; }
+        public string Icon { get; set; } = "Smilies/Nerd Face.png";
+        public string? Image { get; set; }
+    }
 }

@@ -1,8 +1,12 @@
 ﻿@page "/"
 
 @using Calcium.Core
+@using Calcium.Core.Schema.Layouts
+@using Calcium.Core.Schema.Sections
+@using Calcium.Core.Schema.Widgets
 @using Calcium.Toolkit.Oxide.Sections
 @using Calcium.Toolkit.Oxide.Widgets
+@using Calcium.Toolkit.Oxide.Layouts
 @using Calcium.Web.Sections
 
 <PageTitle>Calcium | Home</PageTitle>
@@ -11,17 +15,25 @@
     <Countdown Parameters="@Site.Widgets.Countdown" data-animate-load />
 </Header>
 
-<section id="section-throwback">
-    @{ var _metrics = Site.Sections.Metrics; }
-    <Metrics Title=@_metrics.Title Caption=@_metrics.Caption Items=@_metrics.Content data-animate-scroll="drop-in" />
-    
-    @{ var _gallery = Site.Sections.Gallery; }
-    <Gallery Parameters="@_gallery" data-animate-scroll="drop-in" />
-</section>
+<SectionWithTitle Title=@metrics.Title Caption=@metrics.Caption>
+    <Metrics Items=@metrics.Content data-animate-scroll="drop-in" />
+    <Gallery Parameters="@gallery" data-animate-scroll="drop-in" />
+</SectionWithTitle>
 
+<SectionWithTitle Title="@testimonials.Title" Caption="@testimonials.Caption">
+    <Testimonials Items=@testimonials.Content data-animate-scroll="drop-in" />
+</SectionWithTitle>
 
-@{ var _subscriptions = Site.Sections.Subscriptions; }
-<Subscriptions Title=@_subscriptions.Title Caption=@_subscriptions.Caption Items=@_subscriptions.Content data-animate-scroll="drop-in">
-    @{ var _waitlist = Site.Widgets.Waitlist; }
-    <WaitlistCallToAction Parameters=@_waitlist />
-</Subscriptions>
+<SectionWithTitle Title=@subscriptions.Title Caption=@subscriptions.Caption>
+    <Subscriptions Items=@subscriptions.Content data-animate-scroll="drop-in">
+        <WaitlistCallToAction Parameters=@waitlist />
+    </Subscriptions>
+</SectionWithTitle>
+
+@code {
+    private ContentWithTitle<List<Content>> metrics = Site.Sections.Metrics;
+    private string[] gallery = Site.Sections.Gallery;
+    private ContentWithTitle<List<Testimonial>> testimonials = Site.Widgets.Testimonials;
+    private ContentWithTitle<List<Content>> subscriptions = Site.Sections.Subscriptions;
+    private Waitlist waitlist = Site.Widgets.Waitlist;
+}

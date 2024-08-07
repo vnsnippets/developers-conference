@@ -1,31 +1,22 @@
 ﻿@using Calcium.Core.Schema.Sections
-@using Calcium.Toolkit.Oxide.Layouts
 @using Calcium.Toolkit.Oxide.Components
 
 @if (Items.Any())
 {
-    <SectionWithTitle Title="@Title" Caption="@Caption" @attributes=AdditionalAttributes>
-        <div class="metrics-items">
-            @foreach(var item in Items.OrderBy((e) => e.Index))
-            {
-                <div class="item" data-featured-item="@item.Featured">
-                    @* <Vector Type="@item.Icon" Width="40" Height="40" data-animate-scroll="zoom-in-zoom-out" /> *@
-                    <Emoji Path="@item.Icon" data-emoji-size="40" data-animate-scroll="zoom-in-zoom-out" />
-                    <h2 class="title">@item.Title</h2>
-                    <p class="caption">@item.Caption</p>
-                </div>
-            }
-        </div>
-    </SectionWithTitle>
+    <div class="metrics-items">
+        @foreach(var item in Items.OrderBy((e) => e.Index))
+        {
+            <div class="item" data-featured-item="@item.Featured">
+                @* <Vector Type="@item.Icon" Width="40" Height="40" data-animate-scroll="zoom-in-zoom-out" /> *@
+                <Emoji Path="@item.Icon" data-emoji-size="40" data-animate-scroll="zoom-in-zoom-out" />
+                <h2 class="title">@item.Title</h2>
+                <p class="caption">@item.Caption</p>
+            </div>
+        }
+    </div>
 }
 
 @code {
-    [Parameter]
-    public string? Title { get; set; }
-
-    [Parameter]
-    public string? Caption { get; set; }
-
     [Parameter]
     public List<Content> Items { get; set; } = [];
 

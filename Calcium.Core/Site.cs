@@ -1,6 +1,7 @@
 ﻿using Calcium.Core.Schema;
 using Calcium.Core.Schema.Layouts;
 using Calcium.Core.Schema.Sections;
+using Calcium.Core.Schema.Widgets;
 
 namespace Calcium.Core;
 
@@ -18,7 +19,7 @@ public static class Site
 
     public readonly struct Menus
     {
-        public readonly static List<Lists.Social> Social = [
+        public readonly static List<Schema.Elements.Social> Social = [
             new("facebook", "https://facebook.com", Channel.Facebook),
             new("instagram", "https://instagram.com", Channel.Instagram),
             new("linkedin", "https://linkedin.com", Channel.LinkedIn)
@@ -115,11 +116,11 @@ public static class Site
 
     public readonly struct Widgets
     {
-        public readonly static Schema.Widgets.Countdown Countdown = new()
+        public readonly static Countdown Countdown = new()
         {
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
             Heading = "Count #{Every Second}# Until The Event",
-            Event = new Schema.Widgets.Calendar()
+            Event = new Calendar()
             {
                 Title = "Developers Conference 2025",
                 Description = "Join the Developers Conference 2025 along with developers,enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!",
@@ -130,7 +131,7 @@ public static class Site
             }
         };
 
-        public readonly static Schema.Widgets.Waitlist Waitlist = new() {
+        public readonly static Waitlist Waitlist = new() {
             Title = "Join our waitlist",
             Captions = [ 
                 "Be the first to know when registration for the conference opens next year.",
@@ -139,6 +140,36 @@ public static class Site
             Icon = "Smilies/Smiling Face with Heart-Eyes.png",
             Placeholder = "Enter your email address",
             CTA = "Join Waitlist"
+        };
+
+        public readonly static ContentWithTitle<List<Testimonial>> Testimonials = new()
+        {
+            Title = "Did you hear?",
+            Caption = "Our attendees and speakers had some great things to share about the event.",
+            Content = [
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "Jane Doe",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com",
+                    Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
+                    Icon = "Smilies/Nerd Face.png"
+                },
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "John Smith",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com",
+                    Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
+                    Icon = "Smilies/Nerd Face.png"
+                },
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "Jane Doe",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com"
+                }
+            ]
         };
     }
 

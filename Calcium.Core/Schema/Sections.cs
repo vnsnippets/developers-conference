@@ -18,7 +18,7 @@
         {
             public string[] Title { get; set; } = [];
             public string[] Captions { get; set; } = [];
-            public Lists.Link[] CTA { get; set; } = [];
+            public Elements.Link[] CTA { get; set; } = [];
         }
 
         public class Content

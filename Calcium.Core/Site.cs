@@ -62,15 +62,15 @@ public static class Site
                     Conditions = "We look forward to have you join our line up soon.",
                     Link = "#",
                     Index = 1
-                },
-                new() {
-                    Icon = "Smilies/Smiling Face with Heart-Eyes.png",
-                    Title = "Join the waitlist",
-                    Caption = "Be the first to know when our registration for the conference opens next year.",
-                    Conditions = "Our team will send you an email inviting you to register as an attendee.",
-                    Link = "#",
-                    Index = 2
                 }
+                // new() {
+                //     Icon = "Smilies/Smiling Face with Heart-Eyes.png",
+                //     Title = "Join the waitlist",
+                //     Caption = "Be the first to know when our registration for the conference opens next year.",
+                //     Conditions = "Our team will send you an email inviting you to register as an attendee.",
+                //     Link = "#",
+                //     Index = 2
+                // }
             ]
         };
 
@@ -126,6 +126,17 @@ public static class Site
         {
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
             Heading = "Count #{Every Second}# Until The Event"
+        };
+
+        public readonly static Models.Widgets.Waitlist Waitlist = new() {
+            Title = "Join our waitlist",
+            Captions = [ 
+                "Be the first to know when registration for the conference opens next year.",
+                "Our team will send you an email inviting you to register as an attendee."
+            ],
+            Icon = "Smilies/Smiling Face with Heart-Eyes.png",
+            Placeholder = "Enter your email address",
+            CTA = "Subscribe"
         };
     }
 

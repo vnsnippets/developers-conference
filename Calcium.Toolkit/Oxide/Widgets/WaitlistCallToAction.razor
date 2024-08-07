@@ -1,0 +1,28 @@
+
+@if (Parameters != null)
+{
+    <section class="waitlist-widget">
+        @if (!string.IsNullOrEmpty(Parameters.Title)) {
+            <h5 class="title">@Parameters.Title</h5>
+        }
+
+        <div class="captions">
+        @foreach (var caption in Parameters.Captions) {
+            <p class="title">@caption</p>
+        }
+        </div>
+        
+        <form>
+            <input class="email-input" type="text" placeholder="@(Parameters.Placeholder ?? "Enter your email address")" />
+            <button type="submit" class="button primary">@Parameters.CTA</button>
+        </form>
+    </section>
+}
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public Calcium.Core.Models.Widgets.Waitlist? Parameters { get; set; }
+}

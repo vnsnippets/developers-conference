@@ -2,7 +2,14 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');*/
 /*@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');*/
 
+* {
+    font-family: var(--font-family);
+}
+
 html[data-theme="dark"] {
+    /* Font */
+    --font-family: 'Noto Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Geneva, Verdana, sans-serif;
+
     /* Primary Colors */
     --primary-500: #fdec96;
     --primary-600: #FFC857;
@@ -110,7 +117,7 @@ html {
 
 html {
     min-width: 360px;
-    font-family: 'Lato', 'Segoe UI', -apple-system, BlinkMacSystemFont, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family);
     font-size: var(--fs-100);
     font-weight: 400;
     line-height: 1.4;
@@ -183,7 +190,9 @@ small {
 }
 
 /* Buttons */
+button,
 .button {
+    border: none;
     border-radius: var(--border-radius);
     padding: 0.75rem 1rem;
     font-weight: 500;
@@ -193,7 +202,7 @@ small {
     align-items: center;
     justify-content: center;
     
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none;
     cursor: pointer;
 
@@ -202,7 +211,12 @@ small {
 }
 
 .button:hover {
-    transform: scale(1.025);
+    /* transform: scale(1.025); */
+    outline: none;
+}
+
+.button:focus {
+    outline: none;
 }
 
 .button:active {
@@ -506,3 +520,14 @@ small {
 .mb-3 { margin-bottom: var(--margin-300); }
 .mb-2 { margin-bottom: var(--margin-200); }
 .mb-1 { margin-bottom: var(--margin-100); }
+
+/* Other Stuff */
+input,
+input:hover,
+input:focus,
+input:active {
+    outline: none;
+    border: none;
+    font-family: var(--font-family);
+    font-size: var(--fs-100);
+}

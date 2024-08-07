@@ -11,16 +11,22 @@ html[data-theme="dark"] {
     --secondary-300: #0e141b;
     --secondary-400: #161b22;
     --secondary-500: #1f242a;
+
     /* Body Colors */
     --body-400: #8d96a0;
     --body-500: #d9ede6;
+    
     /* Contrast Colors */
     --primary-contrast: #212529;
     --secondary-contrast: #d9ede6;
     --body-contrast: #212529;
+
     /* Gradient Colors */
     --gradient-highlight-stop-1: #FFDA64;
     --gradient-highlight-stop-2: #FF4BA7;
+
+    scrollbar-color: var(--secondary-500) var(--secondary-400);
+    scrollbar-width: thin;
 }
 
 

@@ -49,7 +49,7 @@
     {
         if (firstRender)
         {
-            module = await JS.InvokeAsync<IJSObjectReference>("import", "./script.js");
+            module = await JS.InvokeAsync<IJSObjectReference>("import", "/scripts/script.js");
             await module.InvokeVoidAsync("DOM.ObserveForAnimations");
         }
     }

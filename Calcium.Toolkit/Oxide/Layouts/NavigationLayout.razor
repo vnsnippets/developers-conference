@@ -1,8 +1,12 @@
 @inherits LayoutComponentBase
+@implements IAsyncDisposable
 
 @using Calcium.Core
 @using Calcium.Toolkit.Oxide.Components
 @using Calcium.Toolkit.Oxide.Sections
+@using Microsoft.JSInterop
+
+@inject IJSRuntime JS
 
 <nav class="navigation">
     <div class="container">
@@ -37,5 +41,24 @@
 <Footer Message="@Site.Footer.Message" />
 
 @code {
+    private IJSObjectReference? module;
+
     public List<Calcium.Core.Models.Lists.Social> Links = Site.Menus.Social;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            module = await JS.InvokeAsync<IJSObjectReference>("import", "./script.js");
+            await module.InvokeVoidAsync("DOM.ObserveForAnimations");
+        }
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
 }

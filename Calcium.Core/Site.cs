@@ -56,7 +56,7 @@ public static class Site
                 },
                 new() {
                     Icon = "Smilies/Grinning Face with Big Eyes.png",
-                    Title = "The floor is yours!",
+                    Title = "Submit a session",
                     Caption = "We are excited to see what kind of talks will come up this year! If you are interested in joining the conference as a speaker, submit your session proposal through our call for proposals.",
                     Link = "#",
                     Index = 1

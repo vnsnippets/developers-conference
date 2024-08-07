@@ -109,7 +109,7 @@
             var ics = Parameters?.Event?.AsICSCalendarEvent();
 
             // Call JS function to initiate download
-            await JS.InvokeVoidAsync("FileDownload", "DevelopersConference2025.ics", "text/calendar", ics);
+            await JS.InvokeVoidAsync("DOM.FileDownload", "DevelopersConference2025.ics", "text/calendar", ics);
         }
     }
 }

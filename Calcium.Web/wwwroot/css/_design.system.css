@@ -271,40 +271,40 @@ button,
 
 /* - Secondary Button Outline Styles - */
 .button.secondary-outline-300 {
-    border: 1px solid var(--secondary-300);
+    border: 2px solid var(--secondary-300);
     background-color: transparent;
     color: var(--secondary-contrast);
 }
 
 .button.secondary-outline-400 {
-    border: 1px solid var(--secondary-400);
+    border: 2px solid var(--secondary-400);
     background-color: transparent;
     color: var(--secondary-contrast);
 }
 
 .button.secondary-outline-500 {
-    border: 1px solid var(--secondary-500);
+    border: 2px solid var(--secondary-500);
     background-color: transparent;
     color: var(--secondary-contrast);
 }
 
 .button.secondary-outline-300:hover,
 .button.secondary-outline-300:active {
-    border: 1px solid var(--secondary-300);
+    border: 2px solid var(--secondary-300);
     background-color: var(--secondary-300);
     color: var(--secondary-contrast);
 }
 
 .button.secondary-outline-400:hover,
 .button.secondary-outline-400:active {
-    border: 1px solid var(--secondary-400);
+    border: 2px solid var(--secondary-400);
     background-color: var(--secondary-400);
     color: var(--secondary-contrast);
 }
 
 .button.secondary-outline-500:hover,
 .button.secondary-outline-500:active {
-    border: 1px solid var(--secondary-500);
+    border: 2px solid var(--secondary-500);
     background-color: var(--secondary-500);
     color: var(--secondary-contrast);
 }

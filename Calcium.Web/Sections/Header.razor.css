@@ -9,6 +9,7 @@
     min-height: 30rem;
     padding-top: 6rem;
     gap: 3rem;
+    width: 100%;
 }
 
     .hero h1 {
@@ -69,9 +70,12 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+            max-width: 14rem;
         }
+
         .hero .hero-body .cta-container > * {
             min-width: 3rem;
+            flex-basis: 100%;
         }
 
             @media screen and (min-width: 768px) {
@@ -84,4 +88,13 @@
                 .hero {
                     min-height: 40rem;
                 }
+
+                    .hero .hero-body .cta-container {
+                        max-width: 100%;
+                    }
+
+                        .hero .hero-body .cta-container > * {
+                            min-width: unset;
+                            flex-basis: unset;
+                        }
             }

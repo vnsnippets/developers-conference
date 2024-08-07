@@ -15,28 +15,29 @@
 
         const AnimatedElements = document.querySelectorAll("[data-animate-scroll]");
         AnimatedElements.forEach((element) => AnimateObserver.observe(element));
-
-        var easterEgg = 0;
-
-        //document.querySelector("[data-easter-egg]").addEventListener("click", () => {
-        //    easterEgg++;
-
-        //    if (easterEgg >= 5) {
-        //        if (document.querySelector("html").dataset.theme == "dark")
-        //            document.querySelector("html").dataset.theme = "light"
-        //        else document.querySelector("html").dataset.theme = "dark"
-
-        //        easterEgg = 0;
-        //    }
-
-        //    setTimeout(() => {
-        //        easterEgg = 0;
-        //    }, 2000);
-        //})
     });
 
     DOMObserver.observe(document.querySelector("body"), {
         childList: true,
         subtree: true
     });
+
+    
 })
+window.FileDownload = (filename, contentType, content) => {
+    // Create the URL
+    const file = new File([content], filename, { type: contentType });
+    const exportUrl = URL.createObjectURL(file);
+
+    // Create the <a> element and click on it
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.href = exportUrl;
+    a.download = filename;
+    a.target = "_self";
+    a.click();
+
+    // We don't need to keep the object URL, let's release the memory
+    // On older versions of Safari, it seems you need to comment this line...
+    URL.revokeObjectURL(exportUrl);
+}

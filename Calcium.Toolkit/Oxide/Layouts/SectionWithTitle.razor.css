@@ -8,6 +8,7 @@
 
 [data-layout="section-with-title"] .title-box {
     text-align: center;
+    margin: 0 0.5rem;
 }
 
     [data-layout="section-with-title"] .title-box .title {
@@ -21,4 +22,22 @@
 
 [data-layout="section-with-title"] .content-box {
     width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+    [data-layout="section-with-title"] .title-box {
+        margin: 0 5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    [data-layout="section-with-title"] .title-box {
+        margin: 0 10rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    [data-layout="section-with-title"] .title-box {
+        margin: 0 18rem;
+    }
 }

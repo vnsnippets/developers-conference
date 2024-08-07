@@ -1,5 +1,8 @@
 ﻿@using Calcium.Core;
 @using System.Text.RegularExpressions
+@using Microsoft.JSInterop
+
+@inject IJSRuntime JS
 
 @if (Parameters != null)
 {
@@ -38,6 +41,10 @@
                 </div>
             </div>
         </div>
+        @if (Parameters.Event != null)
+        {
+            <button type="button" class="button secondary-outline-500" @onclick="DownloadICSFile">@Parameters.Event.Label</button>
+        }
     </div>
 }
 
@@ -93,5 +100,16 @@
 
         if (match.Success) return@<span class="highlight">@match.Groups[1]</span>;
         else return @<span>@token</span>;
+    }
+
+    private async Task DownloadICSFile()
+    {
+        if (JS != null) {
+            // Get bytearray
+            var ics = Parameters?.Event?.AsICSCalendarEvent();
+
+            // Call JS function to initiate download
+            await JS.InvokeVoidAsync("FileDownload", "DevelopersConference2025.ics", "text/calendar", ics);
+        }
     }
 }

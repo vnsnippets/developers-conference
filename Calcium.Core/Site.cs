@@ -36,30 +36,28 @@ public static class Site
                 "Caudan Art Centre"
             ],
             CTA = [
-                new("Become A Sponsor", "mailto:vidush.namah@orion-next.com", "primary"),
-                new("Submit Session", "#section-cta")
+                new("❤️ Contribute As Sponsor", "mailto:vidush.namah@orion-next.com", "primary"),
+                new("Join As Speaker", "#section-cta")
             ]
         };
 
         public readonly static Models.Sections.Cards Subscriptions = new()
         {
-            Title = "Join us in 2025!",
-            Caption = "We would love to have you onboard as a sponsor or speaker.",
+            Title = "Want to be a part of it?",
+            Caption = "Our conference is a community event, built and organised by the community for the community. You can help make it happen as a sponsor or a speaker.",
             Items = [
                 new() {
                     Icon = "Smilies/Star-Struck.png",
                     Featured = true,
-                    Title = "Support the event!",
-                    Caption = "Sponsor our community event and help us create lasting impact in the industry on the island.",
-                    Conditions = "Contact us via email to request for sponsorship proposals.",
+                    Title = "Sponsor the event!",
+                    Caption = "Our conference has always been free of charge - and that's only possible with your support. Become a sponsor and grab your front-row seat as you help us organize the next one.",
                     Link = "mailto:vidush.namah@orion-next.com",
                     Index = 0
                 },
                 new() {
                     Icon = "Smilies/Grinning Face with Big Eyes.png",
-                    Title = "Become a speaker!",
-                    Caption = "Submit a session proposal for our conference and become a speaker. Don't miss out!",
-                    Conditions = "We look forward to have you join our line up soon.",
+                    Title = "The floor is yours!",
+                    Caption = "We are excited to see what kind of talks will come up this year! If you are interested in joining the conference as a speaker, submit your session proposal through our call for proposals.",
                     Link = "#",
                     Index = 1
                 }
@@ -76,8 +74,8 @@ public static class Site
 
         public readonly static Models.Sections.Cards Metrics = new()
         {
-            Title = "Throwback to 2024",
-            Caption = "Go back in time and re-live last year's conference through pictures.",
+            Title = "Last Conference Was A Blast!",
+            Caption = "Our community and team absolutely loved the energy in the last conference. We are looking forward to your participation in the next one!",
             Items = [
                 new() {
                     Index = 0,
@@ -125,14 +123,23 @@ public static class Site
         public readonly static Models.Widgets.Countdown Countdown = new()
         {
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
-            Heading = "Count #{Every Second}# Until The Event"
+            Heading = "Count #{Every Second}# Until The Event",
+            Event = new Models.Widgets.Calendar()
+            {
+                Title = "Developers Conference 2025",
+                Description = "Join the Developers Conference 2025 along with developers,enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!",
+                Location = "Caudan Arts Centre, Port Louis",
+                Start = new DateOnly(2025,7,24),
+                End = new DateOnly(2025,7,26),
+                Label = "Add to Calendar"
+            }
         };
 
         public readonly static Models.Widgets.Waitlist Waitlist = new() {
             Title = "Join our waitlist",
             Captions = [ 
                 "Be the first to know when registration for the conference opens next year.",
-                "Our team will send you an email inviting you to register as an attendee."
+                "An invitation will be delivered straight to your inbox 😉"
             ],
             Icon = "Smilies/Smiling Face with Heart-Eyes.png",
             Placeholder = "Enter your email address",

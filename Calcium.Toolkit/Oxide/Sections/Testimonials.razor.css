@@ -1,8 +1,6 @@
 .testimonials {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
     overflow: hidden;
 }
 
@@ -12,15 +10,13 @@
 
     .testimonials a {
         display: flex;
-        flex: 1;
-        align-items: flex-end;
         position: relative;
         color: var(--body-500);
         font-size: var(--fs-100);
         text-decoration: none;
         background: var(--secondary-400);
         border-radius: 0.5rem;
-        opacity: 0.4;
+        min-width: calc(100%/3);
     }
 
         .testimonials a:hover,
@@ -85,7 +81,3 @@
                 .testimonials a .testimonial .author .details {
                     text-align: center;
                 }
-
-    .testimonials a:nth-child(2) {
-        opacity: 1;
-    }

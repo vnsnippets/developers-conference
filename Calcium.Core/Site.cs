@@ -168,6 +168,34 @@ public static class Site
                     Author = "Jane Doe",
                     Credentials = "CEO",
                     Source = "https://linkedin.com"
+                },
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "John Smith",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com",
+                    Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
+                    Icon = "Smilies/Nerd Face.png"
+                },
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "Jane Doe",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com"
+                },
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "John Smith",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com",
+                    Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
+                    Icon = "Smilies/Nerd Face.png"
+                },
+                new() {
+                    Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
+                    Author = "Jane Doe",
+                    Credentials = "CEO",
+                    Source = "https://linkedin.com"
                 }
             ]
         };

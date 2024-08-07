@@ -12,10 +12,16 @@
 </Header>
 
 <section id="section-throwback">
-    <Metrics id="section-metrics" Parameters="@Site.Sections.Metrics" data-animate-scroll="drop-in" />
-    <Gallery id="section-gallery" Parameters="@Site.Sections.Gallery" data-animate-scroll="drop-in" />
+    @{ var _metrics = Site.Sections.Metrics; }
+    <Metrics Title=@_metrics.Title Caption=@_metrics.Caption Items=@_metrics.Content data-animate-scroll="drop-in" />
+    
+    @{ var _gallery = Site.Sections.Gallery; }
+    <Gallery Parameters="@_gallery" data-animate-scroll="drop-in" />
 </section>
 
-<Subscriptions id="section-cta" Parameters="@Site.Sections.Subscriptions" data-animate-scroll="drop-in">
-    <WaitlistCallToAction Parameters="@Site.Widgets.Waitlist" />
+
+@{ var _subscriptions = Site.Sections.Subscriptions; }
+<Subscriptions Title=@_subscriptions.Title Caption=@_subscriptions.Caption Items=@_subscriptions.Content data-animate-scroll="drop-in">
+    @{ var _waitlist = Site.Widgets.Waitlist; }
+    <WaitlistCallToAction Parameters=@_waitlist />
 </Subscriptions>

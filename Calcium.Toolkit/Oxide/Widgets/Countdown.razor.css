@@ -44,7 +44,7 @@
     color: var(--body-400);
     display: flex;
     align-items: start;
-    font-size: var(--fs-550);
+    font-size: var(--fs-500);
     margin: 0 0.35rem;
 }
 

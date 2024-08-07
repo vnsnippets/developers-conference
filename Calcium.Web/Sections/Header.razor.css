@@ -15,7 +15,6 @@
     .hero h1 {
         background: linear-gradient(to right, #54acff, #b676fe);
         background-clip: text;
-        text-fill-color: transparent;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -48,6 +47,7 @@
         flex-direction: column;
         animation: zoom-in-zoom-out 500ms ease-in-out;
         z-index: 1;
+        width: 100%;
     }
 
 .hero .hero-body h1 .inline-block {
@@ -70,31 +70,29 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            max-width: 14rem;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .hero .hero-body .cta-container > * {
-            min-width: 3rem;
-            flex-basis: 100%;
+        .hero .hero-body .cta-container a,
+        .hero .hero-body .cta-container button {
+            width: 12rem;
         }
 
-            @media screen and (min-width: 768px) {
-                .hero .hero-body h1 .emoji-inline img {
-                    margin-right: -0.5rem;
-                    margin-left: 0.25rem;
-                    margin-bottom: -0.25rem;
-                }
+@media screen and (min-width: 768px) {
+    .hero .hero-body h1 .emoji-inline img {
+        margin-right: -0.5rem;
+        margin-left: 0.25rem;
+        margin-bottom: -0.25rem;
+    }
 
-                .hero {
-                    min-height: 40rem;
-                }
-
-                    .hero .hero-body .cta-container {
-                        max-width: 100%;
-                    }
-
-                        .hero .hero-body .cta-container > * {
-                            min-width: unset;
-                            flex-basis: unset;
-                        }
-            }
+    .hero {
+        min-height: 40rem;
+    }
+        .hero .hero-body .cta-container {
+            flex-direction: row;
+        }
+}

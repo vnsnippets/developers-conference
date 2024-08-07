@@ -1,7 +1,7 @@
 
 @if (Parameters != null)
 {
-    <section class="waitlist-widget">
+    <div class="waitlist-widget">
         @if (!string.IsNullOrEmpty(Parameters.Title)) {
             <h4 class="title">@Parameters.Title</h4>
         }
@@ -16,7 +16,7 @@
             <input class="email-input" type="text" placeholder="@(Parameters.Placeholder ?? "Enter your email address")" />
             <button type="submit" class="button primary">@Parameters.CTA</button>
         </form>
-    </section>
+    </div>
 }
 
 @code {
@@ -24,5 +24,5 @@
     public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
     [Parameter]
-    public Calcium.Core.Models.Widgets.Waitlist? Parameters { get; set; }
+    public Calcium.Core.Schema.Widgets.Waitlist? Parameters { get; set; }
 }

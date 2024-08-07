@@ -1,28 +1,27 @@
-﻿@using Calcium.Core.Models
+﻿@using Calcium.Core.Schema
 @using Calcium.Toolkit.Assets
-@using Calcium.Toolkit.Assets.Emojis
 
-@if (Type != null && Type != Icon.None) {
+@if (Type != null && Type != Channel.None) {
     <span class="vector-icon" @attributes=AdditionalAttributes>
         @switch (Type)
         {
-            case Icon.Facebook:
+            case Channel.Facebook:
                 <Calcium.Toolkit.Assets.Facebook width="@Width" height="@Height" />
                 break;
 
-            case Icon.Instagram:
+            case Channel.Instagram:
                 <Calcium.Toolkit.Assets.Instagram width="@Width" height="@Height" />
                 break;
 
-            case Icon.Github:
+            case Channel.Github:
                 <Calcium.Toolkit.Assets.Github width="@Width" height="@Height" />
                 break;
 
-            case Icon.LinkedIn:
+            case Channel.LinkedIn:
                 <Calcium.Toolkit.Assets.LinkedIn width="@Width" height="@Height" />
                 break;
 
-            case Icon.X:
+            case Channel.X:
                 <X width="@Width" height="@Height" />
                 break;
 
@@ -34,7 +33,7 @@
 
 @code {
     [Parameter]
-    public Core.Models.Icon? Type { get; set; }
+    public Channel? Type { get; set; }
 
     [Parameter]
     public int Width { get; set; } = 20;

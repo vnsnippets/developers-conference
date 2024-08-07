@@ -1,6 +1,6 @@
 ﻿@using System.Text.RegularExpressions
 @using System.Linq
-@using static Calcium.Core.Models.Lists
+@using static Calcium.Core.Schema.Lists
 
 @if (Parameters != null)
 {
@@ -22,10 +22,12 @@
                 <h3 class="contrast">@line</h3>
             }
 
-            <div class="flex cta-container">
+            <div class="cta-container">
             @foreach (var cta in Parameters.CTA)
             {
-                <a class="button cta @(cta.Type ?? "secondary-400")" href="@cta.URL">@cta.Name</a>
+                <a class="button cta @(cta.Type ?? "secondary-400")" href="@cta.URL">
+                    <span>@cta.Name</span>
+                </a>
             }
             </div>
         </div>
@@ -36,7 +38,7 @@
 
 @code {
     [Parameter]
-    public Calcium.Core.Models.Sections.Hero? Parameters { get; set; }
+    public Calcium.Core.Schema.Sections.Hero? Parameters { get; set; }
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

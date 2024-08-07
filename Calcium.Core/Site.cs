@@ -1,30 +1,33 @@
-﻿using Calcium.Core.Models;
+﻿using Calcium.Core.Schema;
+using Calcium.Core.Schema.Layouts;
+using Calcium.Core.Schema.Sections;
 
 namespace Calcium.Core;
 
 public static class Site
 {
-    public readonly static string Title = "Calcium Site";
+    public readonly static string Title = "Developers Conference 2025";
     public readonly static string ResourcesBaseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/release/resources/.optimized";
-    public static class Brand
+    
+    public readonly struct Brand
     {
         public readonly static string Label = "Developers Conference";
         public readonly static string ImagePath = "images/brand.svg";
         public readonly static string URL = "/";
     }
 
-    public static class Menus
+    public readonly struct Menus
     {
         public readonly static List<Lists.Social> Social = [
-            new("facebook", "https://facebook.com", Icon.Facebook),
-            new("instagram", "https://instagram.com", Icon.Instagram),
-            new("linkedin", "https://linkedin.com", Icon.LinkedIn)
+            new("facebook", "https://facebook.com", Channel.Facebook),
+            new("instagram", "https://instagram.com", Channel.Instagram),
+            new("linkedin", "https://linkedin.com", Channel.LinkedIn)
         ];
     }
 
-    public static class Sections
+    public readonly struct Sections
     {
-        public readonly static Models.Sections.Hero Hero = new()
+        public readonly static Hero Hero = new()
         {
             Title = [
                 "Devel#{Smilies/Face with Open Mouth | O}#pers",
@@ -32,7 +35,7 @@ public static class Site
                 "2025"
             ],
             Captions = [
-                "24, 25 & 26 July 2025",
+                "24 - 26 July 2025",
                 "Caudan Art Centre"
             ],
             CTA = [
@@ -41,11 +44,11 @@ public static class Site
             ]
         };
 
-        public readonly static Models.Sections.Cards Subscriptions = new()
+        public readonly static ContentWithTitle<List<Content>> Subscriptions = new()
         {
             Title = "Want to be a part of it?",
             Caption = "Our conference is a community event, built and organised by the community for the community. You can help make it happen as a sponsor or a speaker.",
-            Items = [
+            Content = [
                 new() {
                     Icon = "Smilies/Star-Struck.png",
                     Featured = true,
@@ -61,22 +64,14 @@ public static class Site
                     Link = "#",
                     Index = 1
                 }
-                // new() {
-                //     Icon = "Smilies/Smiling Face with Heart-Eyes.png",
-                //     Title = "Join the waitlist",
-                //     Caption = "Be the first to know when our registration for the conference opens next year.",
-                //     Conditions = "Our team will send you an email inviting you to register as an attendee.",
-                //     Link = "#",
-                //     Index = 2
-                // }
             ]
         };
 
-        public readonly static Models.Sections.Cards Metrics = new()
+        public readonly static ContentWithTitle<List<Content>> Metrics = new()
         {
-            Title = "Last Conference Was A Blast!",
+            Title = "Let's have a blast!",
             Caption = "Our community and team absolutely loved the energy in the last conference. We are looking forward to your participation in the next one!",
-            Items = [
+            Content = [
                 new() {
                     Index = 0,
                     Featured = true,
@@ -118,24 +113,24 @@ public static class Site
         ];
     }
 
-    public static class Widgets
+    public readonly struct Widgets
     {
-        public readonly static Models.Widgets.Countdown Countdown = new()
+        public readonly static Schema.Widgets.Countdown Countdown = new()
         {
             Deadline = new DateTime(2025, 07, 25, 08, 00, 00),
             Heading = "Count #{Every Second}# Until The Event",
-            Event = new Models.Widgets.Calendar()
+            Event = new Schema.Widgets.Calendar()
             {
                 Title = "Developers Conference 2025",
                 Description = "Join the Developers Conference 2025 along with developers,enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!",
                 Location = "Caudan Arts Centre, Port Louis",
                 Start = new DateOnly(2025,7,24),
                 End = new DateOnly(2025,7,26),
-                Label = "Add to Calendar"
+                Label = "Add To Calendar"
             }
         };
 
-        public readonly static Models.Widgets.Waitlist Waitlist = new() {
+        public readonly static Schema.Widgets.Waitlist Waitlist = new() {
             Title = "Join our waitlist",
             Captions = [ 
                 "Be the first to know when registration for the conference opens next year.",
@@ -143,11 +138,11 @@ public static class Site
             ],
             Icon = "Smilies/Smiling Face with Heart-Eyes.png",
             Placeholder = "Enter your email address",
-            CTA = "Subscribe"
+            CTA = "Join Waitlist"
         };
     }
 
-    public static class Footer
+    public readonly struct Footer
     {
         public readonly static string Message = "MSCC DEVELOPERS CONFERENCE 2025";
     }

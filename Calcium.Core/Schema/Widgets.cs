@@ -1,8 +1,6 @@
 ﻿using System.Text;
 
-namespace Calcium.Core.Models;
-
-public static class Widgets
+namespace Calcium.Core.Schema.Widgets
 {
     public class Calendar
     {
@@ -16,7 +14,7 @@ public static class Widgets
         public byte[] AsICSCalendarEvent()
         {
             // Begin building string for the file
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             // Calendar Item Metadata
             sb.AppendLine("BEGIN:VCALENDAR");
@@ -46,7 +44,6 @@ public static class Widgets
 
     public class Countdown
     {
-
         public DateTime Deadline { get; set; } = DateTime.Now;
         public string Heading { get; set; } = string.Empty;
         public Calendar? Event { get; set; }

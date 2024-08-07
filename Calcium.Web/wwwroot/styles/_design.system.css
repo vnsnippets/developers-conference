@@ -32,10 +32,9 @@ html {
     scrollbar-width: thin;
 }
 
-
-    html[data-theme="dark"] .brand {
-        filter: invert(1) !important;
-    }
+html[data-theme="dark"] .brand {
+    filter: invert(1) !important;
+}
 
 html {
     /* Border Radius*/
@@ -49,8 +48,7 @@ html {
     --margin-100: 0.5rem;
 
     /* Font Sizes */
-    --fs-600: 1.9rem;
-    --fs-550: 1.75rem;
+    --fs-600: 2.15rem;
     --fs-500: 1.625rem;
     --fs-400: 1.375rem;
     --fs-300: 1.25rem;
@@ -74,7 +72,7 @@ html {
 @media screen and (min-width: 500px) {
     :root {
         /* Font Sizes */
-        --fs-600: 1.9rem;
+        --fs-600: 2.15rem;
         --fs-550: 1.75rem;
         --fs-500: 1.625rem;
         --fs-400: 1.375rem;
@@ -209,16 +207,18 @@ button,
 
 /* - Primary Button Styles - */
 .button.primary, .button.primary-500 {
+    border: 2px solid var(--primary-500);
     background-color: var(--primary-500);
     color: var(--primary-contrast);
 }
 
-/* -- Primary Button Hover & Active Styles -- */
-.button.primary:hover, .button.primary-500:hover,
-.button.primary:active, .button.primary-500:active {
-    background-color: var(--primary-600);
-    color: var(--primary-contrast);
-}
+    /* -- Primary Button Hover & Active Styles -- */
+    .button.primary:hover, .button.primary-500:hover,
+    .button.primary:active, .button.primary-500:active {
+        border: 2px solid var(--primary-600);
+        background-color: var(--primary-600);
+        color: var(--primary-contrast);
+    }
 
 /* - Primary Text Styles - */
 .primary, .primary-500 {
@@ -248,23 +248,27 @@ button,
 
 /* - Secondary Button Styles - */
 .button.secondary-300 {
+    border: 2px solid var(--secondary-300);
     background-color: var(--secondary-300);
     color: var(--secondary-contrast);
 }
 
 .button.secondary-400 {
+    border: 2px solid var(--secondary-400);
     background-color: var(--secondary-400);
     color: var(--secondary-contrast);
 }
 
 .button.secondary-300:hover,
 .button.secondary-300:active {
+    border: 2px solid var(--secondary-400);
     background-color: var(--secondary-400);
     color: var(--secondary-contrast);
 }
 
 .button.secondary-400:hover,
 .button.secondary-400:active {
+    border: 2px solid var(--secondary-500);
     background-color: var(--secondary-500);
     color: var(--secondary-contrast);
 }

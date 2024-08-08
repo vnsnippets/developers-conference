@@ -19,6 +19,7 @@ html {
     --body-300: #8d96a0;
     --body-400: #8d96a0;
     --body-500: #d9ede6;
+    --body-600: #bccec9;
     
     /* Contrast Colors */
     --primary-contrast: #212529;
@@ -373,4 +374,12 @@ input:active {
     border: none;
     font-family: var(--font-family);
     font-size: var(--fs-100);
+}
+
+p {
+    font-weight: lighter;
+}
+
+p.regular {
+    font-weight: normal;
 }

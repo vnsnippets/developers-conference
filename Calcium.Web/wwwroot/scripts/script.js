@@ -33,6 +33,33 @@ export class DOM {
         // On older versions of Safari, it seems you need to comment this line...
         URL.revokeObjectURL(exportUrl);
     }
+
+    static StartTestimonialsAnimation = () => {
+        const Animate = () => {
+            const carousel = document.querySelector(".testimonials");
+            const cardwidth = carousel.children[0].offsetWidth;
+
+            const cards = [...carousel.children];
+            
+            // Number of cards per view
+            // After scrolling, the cards in view can be added to the end of the container
+            let cardsperview = Math.round(carousel.offsetWidth / cardwidth);
+
+            for (var i = 0; i < cardsperview; i++) {
+                if (carousel.children[i]) {
+                    carousel.insertAdjacentHTML("beforeend", carousel.children[i].outerHTML)
+                }
+            }
+
+            carousel.scrollLeft += (cardwidth * cardsperview) + (16 * cardsperview - 1);
+            
+            //for (var i = 0; i < cardsperview; i++) {
+            //    carousel.removeChild(carousel.firstChild);
+            //}
+        }
+
+        window.setInterval(Animate, 5000);
+    }
 };
 
 window.DOM = DOM;

@@ -20,9 +20,9 @@
     <Gallery Parameters="@gallery" data-animate-scroll="drop-in" />
 </SectionWithTitle>
 
-@* <SectionWithTitle Title="@testimonials.Title" Caption="@testimonials.Caption">
-    <Testimonials Items=@testimonials.Content data-animate-scroll="drop-in" />
-</SectionWithTitle> *@
+<SectionWithTitle Title="@features.Title" Caption="@features.Caption">
+    <Features Items=@features.Content data-animate-scroll="drop-in" />
+</SectionWithTitle>
 
 <SectionWithTitle Title=@subscriptions.Title Caption=@subscriptions.Caption>
     <Subscriptions Items=@subscriptions.Content data-animate-scroll="drop-in">
@@ -33,7 +33,8 @@
 @code {
     private ContentWithTitle<List<Content>> metrics = Site.Sections.Metrics;
     private string[] gallery = Site.Sections.Gallery;
-    private ContentWithTitle<List<Testimonial>> testimonials = Site.Widgets.Testimonials;
+    // private ContentWithTitle<List<Testimonial>> testimonials = Site.Widgets.Testimonials;
+    private ContentWithTitle<List<Feature>> features = Site.Widgets.Features;
     private ContentWithTitle<List<Content>> subscriptions = Site.Sections.Subscriptions;
     private Waitlist waitlist = Site.Widgets.Waitlist;
 }

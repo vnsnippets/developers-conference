@@ -8,7 +8,7 @@ namespace Calcium.Core;
 public static class Site
 {
     public readonly static string Title = "Developers Conference 2025";
-    public readonly static string ResourcesBaseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/release/resources/.optimized";
+    public readonly static string ResourcesBaseURL = "https://raw.githubusercontent.com/vnsnippets/developers-conference/release/resources/.resources";
     
     public readonly struct Brand
     {
@@ -125,15 +125,15 @@ public static class Site
                 Title = "Developers Conference 2025",
                 Description = "Join the Developers Conference 2025 along with developers,enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!",
                 Location = "Caudan Arts Centre, Port Louis",
-                Start = new DateOnly(2025,7,24),
-                End = new DateOnly(2025,7,26),
+                Start = new DateOnly(2025, 7, 24),
+                End = new DateOnly(2025, 7, 26),
                 Label = "Add To Calendar"
             }
         };
 
         public readonly static Waitlist Waitlist = new() {
             Title = "Join our waitlist",
-            Captions = [ 
+            Captions = [
                 "Be the first to know when registration for the conference opens next year.",
                 "An invitation will be delivered straight to your inbox 😉"
             ],
@@ -149,7 +149,7 @@ public static class Site
             Content = [
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "Jane Doe",
+                    Author = "Jane Doe 1",
                     Credentials = "CEO",
                     Source = "https://linkedin.com",
                     Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
@@ -157,7 +157,7 @@ public static class Site
                 },
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "John Smith",
+                    Author = "John Smith 2",
                     Credentials = "CEO",
                     Source = "https://linkedin.com",
                     Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
@@ -165,13 +165,13 @@ public static class Site
                 },
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "Jane Doe",
+                    Author = "Jane Doe 3",
                     Credentials = "CEO",
                     Source = "https://linkedin.com"
                 },
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "John Smith",
+                    Author = "John Smith 4",
                     Credentials = "CEO",
                     Source = "https://linkedin.com",
                     Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
@@ -179,13 +179,13 @@ public static class Site
                 },
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "Jane Doe",
+                    Author = "Jane Doe 5",
                     Credentials = "CEO",
                     Source = "https://linkedin.com"
                 },
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "John Smith",
+                    Author = "John Smith 6",
                     Credentials = "CEO",
                     Source = "https://linkedin.com",
                     Image = "https://avatars.githubusercontent.com/u/16542151?v=4",
@@ -193,9 +193,47 @@ public static class Site
                 },
                 new() {
                     Quote = "Reviews are often paired with carousels for interactivity and efficiency. The slide currently under focus is distinguished by a different colour scheme and a higher opacity.",
-                    Author = "Jane Doe",
+                    Author = "Jane Doe 7",
                     Credentials = "CEO",
                     Source = "https://linkedin.com"
+                }
+            ]
+        };
+
+        public readonly static ContentWithTitle<List<Feature>> Features = new()
+        {
+            Title = "What to expect?",
+            Caption = "Learn about industry trends, best practices and new innovations through sessions and workshops when you are not having fun with all the entertainment and activities.",
+            Content = [
+                new() {
+                    Title = "Workshops",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    Icon = "Activities/Artist Palette.png"
+                },
+                new() {
+                    Title = "Panel Discussions",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    Icon = "Activities/Bullseye.png"
+                },
+                new() {
+                    Title = "Speaker Sessions",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    Icon = "Activities/Performing Arts.png"
+                },
+                new() {
+                    Title = "Friendly Atmosphere",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    Icon = "Activities/Bowling.png"
+                },
+                new() {
+                    Title = "Activities",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    Icon = "Activities/Sports Medal.png"
+                },
+                new() {
+                    Title = "Networking",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    Icon = "Objects/Necktie.png"
                 }
             ]
         };

@@ -1,0 +1,63 @@
+﻿@using Calcium.Core.Schema.Widgets
+@using Calcium.Toolkit.Oxide.Components
+@using Microsoft.JSInterop
+
+@if (Items.Count() >= 3)
+{
+    <div class="testimonials">
+        @foreach (var item in Items)
+        {
+            @* <a class="testimonial" href="@item.Source" data-active="@(Items.ElementAt(_activeIndex) == item)"> *@
+            <a class="testimonial" href="@item.Source">
+                @if (!string.IsNullOrEmpty(item.Icon)) {
+                    <i class="icon">
+                        <Emoji Path="@item.Icon" Name="Testimonial Icon" data-emoji-size="65" />
+                    </i>
+                }
+                @if (!string.IsNullOrEmpty(item.Quote)) { 
+                    <p class="quote">@item.Quote</p> 
+                }
+
+                @if (!string.IsNullOrEmpty(item.Author))
+                {
+                    <div class="author">
+                        <h6 class="name">@item.Author</h6>
+                        <small class="company">@item.Credentials</small>
+                    </div>                    
+                }
+            </a>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public List<Testimonial> Items { get; set; } = [];
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    // private System.Timers.Timer _timer = new System.Timers.Timer(1000);
+
+    // private int _activeIndex = 1;
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     _timer.Elapsed += (sender, eventArgs) => SwitchActiveItem();
+    //     _timer.Start();
+
+    //     await base.OnInitializedAsync();
+    // }
+
+    // private void SwitchActiveItem()
+    // {
+    //     _activeIndex = (_activeIndex >= Items.Count() - 1) ? 0 : _activeIndex + 1;
+    //     StateHasChanged();
+    // }
+
+    // public void Dispose()
+    // {
+    //     _timer.Stop();
+    //     _timer.Dispose();
+    // }
+}

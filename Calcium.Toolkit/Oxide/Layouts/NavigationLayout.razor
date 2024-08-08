@@ -51,6 +51,7 @@
         {
             module = await JS.InvokeAsync<IJSObjectReference>("import", "/scripts/script.js");
             await module.InvokeVoidAsync("DOM.ObserveForAnimations");
+            await module.InvokeVoidAsync("DOM.StartTestimonialsAnimation");
         }
     }
 

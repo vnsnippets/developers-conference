@@ -49,7 +49,8 @@ namespace Calcium.Core.Schema.Widgets
         public Calendar? Event { get; set; }
     }
 
-    public class Waitlist {
+    public class Waitlist
+    {
         public string? Title { get; set; }
         public string[] Captions { get; set; } = [];
         public string? Icon { get; set; }
@@ -66,5 +67,13 @@ namespace Calcium.Core.Schema.Widgets
         public string? Source { get; set; }
         public string Icon { get; set; } = "Smilies/Nerd Face.png";
         public string? Image { get; set; }
+    }
+
+    public class Feature
+    {
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public string? Icon { get; set; }
     }
 }

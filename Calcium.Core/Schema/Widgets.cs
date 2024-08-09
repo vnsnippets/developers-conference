@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Web;
 
 namespace Calcium.Core.Schema.Widgets
 {
@@ -54,22 +55,22 @@ namespace Calcium.Core.Schema.Widgets
 
         public string GoogleCalendarLink
         {
-            get => $"https://calendar.google.com/calendar/r/render?action=TEMPLATE&dates={Start:yyyy-MM-ddThh:mm:sszzz}%2F{End:yyyy-MM-ddThh:mm:sszzz)}&details={Description}&location={Location}&text={Title}"; //2025-07-23T20%3A00%3A00%2B00%3A00
+            get => $"https://calendar.google.com/calendar/r/render?action=TEMPLATE&dates={Start:yyyy-MM-ddThh:mm:sszzz}%2F{End:yyyy-MM-ddThh:mm:sszzz)}&details={HttpUtility.UrlEncode(Description)}&location={HttpUtility.UrlEncode(Location)}&text={HttpUtility.UrlEncode(Title)}"; //2025-07-23T20%3A00%3A00%2B00%3A00
         }
 
         public string OutlookCalendarLink
         {
-            get => $"https://outlook.live.com/calendar/0/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={Title}&body={Description}&location={Location}";
+            get => $"https://outlook.live.com/calendar/0/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={HttpUtility.UrlEncode(Title)}&body={HttpUtility.UrlEncode(Description)}&location={HttpUtility.UrlEncode(Location)}";
         }
 
         public string Office365CalendarLink
         {
-            get => $"https://outlook.office.com/calendar/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={Title}&body={Description}&location={Location}";
+            get => $"https://outlook.office.com/calendar/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={HttpUtility.UrlEncode(Title)}&body={HttpUtility.UrlEncode(Description)}&location={HttpUtility.UrlEncode(Location)}";
         }
 
         public string YahooCalendarLink 
         {
-            get => $"https://calendar.yahoo.com/?desc={Description}&dur={((AllDayEvent) ? "allday" : "")}&in_loc={Location}&et={End:yyyy-MM-ddThh:mm:sszzz}&st={Start:yyyy-MM-ddThh:mm:sszzz}&title={Title}&v=60";
+            get => $"https://calendar.yahoo.com/?desc={Description}&dur={((AllDayEvent) ? "allday" : "")}&in_loc={HttpUtility.UrlEncode(Location)}&et={End:yyyy-MM-ddThh:mm:sszzz}&st={Start:yyyy-MM-ddThh:mm:sszzz}&title={HttpUtility.UrlEncode(Title)}&v=60";
         }
     }
 

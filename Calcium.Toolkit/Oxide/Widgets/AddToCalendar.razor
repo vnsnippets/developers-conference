@@ -7,10 +7,10 @@
         <p class="heading regular">@Event.Heading</p>
 
         <div class="links">
-            <a target="_blank" class="button secondary-outline-500" href="@Event.GoogleCalendarLink">@Event.CTA.Google</a>
-            <a target="_blank" class="button secondary-outline-500" href="@Event.OutlookCalendarLink">@Event.CTA.Outlook</a>
-            <a target="_blank" class="button secondary-outline-500" href="@Event.Office365CalendarLink">@Event.CTA.Office365</a>
-            <a target="_blank" class="button secondary-outline-500" href="@Event.YahooCalendarLink">@Event.CTA.Yahoo</a>
+            <a target="_top" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.GoogleCalendarLink">@Event.CTA.Google</a>
+            <a target="_top" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.OutlookCalendarLink">@Event.CTA.Outlook</a>
+            <a target="_top" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.Office365CalendarLink">@Event.CTA.Office365</a>
+            <a target="_top" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.YahooCalendarLink">@Event.CTA.Yahoo</a>
         </div>
 
         <button type="button" class="button secondary-outline-500" @onclick="DownloadICSFile">@Event.CTA.Default</button>

@@ -55,22 +55,32 @@ namespace Calcium.Core.Schema.Widgets
 
         public string GoogleCalendarLink
         {
-            get => $"https://calendar.google.com/calendar/r/render?action=TEMPLATE&dates={Start:yyyy-MM-ddThh:mm:sszzz}%2F{End:yyyy-MM-ddThh:mm:sszzz)}&details={HttpUtility.UrlEncode(Description)}&location={HttpUtility.UrlEncode(Location)}&text={HttpUtility.UrlEncode(Title)}"; //2025-07-23T20%3A00%3A00%2B00%3A00
+            get
+            {
+                string dateFormat = (AllDayEvent) ? "yyyyMMdd" : "yyyyMMddTHHmmssZ";
+                return $"https://calendar.google.com/calendar/render?action=TEMPLATE&dates={Start.UtcDateTime.ToString(dateFormat)}%2F{End.UtcDateTime.ToString(dateFormat)}&details={Uri.EscapeDataString(Description)}&location={Uri.EscapeDataString(Location)}&text={Uri.EscapeDataString(Title)}";
+            }
         }
 
         public string OutlookCalendarLink
         {
-            get => $"https://outlook.live.com/calendar/0/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={HttpUtility.UrlEncode(Title)}&body={HttpUtility.UrlEncode(Description)}&location={HttpUtility.UrlEncode(Location)}";
+            get => $"https://outlook.live.com/calendar/0/action/compose?allday={AllDayEvent.ToString().ToLowerInvariant()}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Uri.EscapeDataString(Start.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:sszzz"))}&enddt={Uri.EscapeDataString(End.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:sszzz"))}&subject={Uri.EscapeDataString(Title)}&body={Uri.EscapeDataString(Description)}&location={Uri.EscapeDataString(Location)}";
         }
 
         public string Office365CalendarLink
         {
-            get => $"https://outlook.office.com/calendar/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={HttpUtility.UrlEncode(Title)}&body={HttpUtility.UrlEncode(Description)}&location={HttpUtility.UrlEncode(Location)}";
+            get => $"https://outlook.office.com/calendar/action/compose?allday={AllDayEvent.ToString().ToLowerInvariant()}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Uri.EscapeDataString(Start.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:sszzz"))}&enddt={Uri.EscapeDataString(End.UtcDateTime.ToString("yyyy-MM-ddTHH:mm:sszzz"))}&subject={Uri.EscapeDataString(Title)}&body={Uri.EscapeDataString(Description)}&location={Uri.EscapeDataString(Location)}";
         }
 
         public string YahooCalendarLink 
         {
-            get => $"https://calendar.yahoo.com/?desc={Description}&dur={((AllDayEvent) ? "allday" : "")}&in_loc={HttpUtility.UrlEncode(Location)}&et={End:yyyy-MM-ddThh:mm:sszzz}&st={Start:yyyy-MM-ddThh:mm:sszzz}&title={HttpUtility.UrlEncode(Title)}&v=60";
+            get
+            {
+                string dateFormat = (AllDayEvent) ? "yyyyMMdd" : "yyyyMMddTHHmmssZ";
+                string alldaystring = ((AllDayEvent) ? "allday" : "");
+
+                return $"https://calendar.yahoo.com/?desc={Uri.EscapeDataString(Description)}&dur={alldaystring}&in_loc={Uri.EscapeDataString(Location)}&et={End.UtcDateTime.ToString(dateFormat)}&st={Start.UtcDateTime.ToString(dateFormat)}&title={Uri.EscapeDataString(Title)}&v=60";
+            }
         }
     }
 

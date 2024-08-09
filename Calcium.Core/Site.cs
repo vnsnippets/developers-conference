@@ -126,8 +126,9 @@ public static class Site
                 Title = "Developers Conference 2025",
                 Description = "Join the Developers Conference 2025 along with developers,enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!",
                 Location = "Caudan Arts Centre, Port Louis",
-                Start = new DateTimeOffset(2025, 7, 24, 00, 00, 00, TimeSpan.Zero),
-                End = new DateTimeOffset(2025, 7, 24, 00, 00, 00, TimeSpan.Zero),
+                Start = new DateTimeOffset(2025, 7, 24, 08, 00, 00, TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow)),
+                End = new DateTimeOffset(2025, 7, 26, 17, 00, 00, TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow)),
+                AllDayEvent = false,
                 CTA = new()
                 {
                     Default = "Download ICS File",

@@ -129,7 +129,7 @@ public static class Site
                 Location = "Caudan Arts Centre, Port Louis",
                 Start = new DateTimeOffset(2025, 7, 24, 08, 00, 00, TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow)),
                 End = new DateTimeOffset(2025, 7, 26, 17, 00, 00, TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow)),
-                AllDayEvent = false,
+                AllDayEvent = true,
                 Label = "Download Calendar File"
             }
         };

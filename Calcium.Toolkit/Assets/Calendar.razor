@@ -1,0 +1,25 @@
+﻿@switch (Platform)
+{
+    case "Google":
+        <Calcium.Toolkit.Assets.Calendars.Google />
+        break;
+
+    case "Microsoft":
+        <Calcium.Toolkit.Assets.Calendars.Outlook />
+        break;
+
+    case "Office 365":
+        <Calcium.Toolkit.Assets.Calendars.Office365 />
+        break;
+
+    case "Yahoo":
+        <Calcium.Toolkit.Assets.Calendars.Yahoo />
+        break;
+
+    default:
+        break;
+}
+@code {
+    [Parameter]
+    public string? Platform { get; set; }
+}

@@ -1,4 +1,6 @@
-﻿@using Microsoft.JSInterop
+﻿@using Calcium.Toolkit.Assets;
+
+@using Microsoft.JSInterop
 @inject IJSRuntime JS
 
 @if (Event != null)
@@ -7,13 +9,28 @@
         <p class="heading regular">@Event.Heading</p>
 
         <div class="links">
-            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.GoogleCalendarLink">@Event.CTA.Google</a>
-            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.OutlookCalendarLink">@Event.CTA.Outlook</a>
-            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.Office365CalendarLink">@Event.CTA.Office365</a>
-            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.YahooCalendarLink">@Event.CTA.Yahoo</a>
+            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.GoogleCalendarLink">
+                <Calendar Platform="Google" />
+            </a>
+
+            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.OutlookCalendarLink">
+                <Calendar Platform="Microsoft" />
+            </a>
+
+            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.Office365CalendarLink">
+                <Calendar Platform="Office 365" />
+            </a>
+
+            <a target="_blank" title="Save Event in my Calendar" class="button secondary-outline-500" href="@Event.YahooCalendarLink">
+                <Calendar Platform="Yahoo" />
+            </a>
         </div>
 
-        <button type="button" class="button secondary-outline-500" @onclick="DownloadICSFile">@Event.CTA.Default</button>
+        @if (!string.IsNullOrEmpty(Event.Label)) {
+            <div class="with-divider">
+                <button type="button" class="button secondary-outline-500" @onclick="DownloadICSFile">@Event.Label</button>
+            </div>
+        }
     </section>
 }
 

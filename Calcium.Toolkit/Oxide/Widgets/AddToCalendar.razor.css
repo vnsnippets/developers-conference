@@ -17,5 +17,37 @@
         gap: 1rem;
     }
 
-    .calendar .links > * {
+        .calendar .links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.75rem;
+            height: 1.75rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+    .calendar .with-divider {
+        position: relative;
+        padding-top: 1.5rem;
+        margin-top: 0.5rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .calendar .with-divider::before {
+        content: ' ';
+       
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+
+        width: 2rem;
+        height: 2px;
+        background: var(--body-500);
+        border-radius: 2px;
+        opacity: 0.75;
     }

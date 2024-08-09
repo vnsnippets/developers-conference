@@ -5,15 +5,6 @@ namespace Calcium.Core.Schema.Widgets
 {
     public class Calendar
     {
-        public struct Labels
-        {
-            public string Default { get; set; }
-            public string Google { get; set; }
-            public string Outlook { get; set; }
-            public string Office365 { get; set; }
-            public string Yahoo { get; set; }
-        }
-
         public string Heading { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
@@ -21,7 +12,7 @@ namespace Calcium.Core.Schema.Widgets
         public DateTimeOffset Start { get; set; }
         public DateTimeOffset End { get; set; }
         public bool AllDayEvent { get; set; } = true;
-        public Labels CTA { get; set; }
+        public string? Label { get; set; }
 
         public byte[] CreateICSFileAsByteArray()
         {

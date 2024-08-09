@@ -54,7 +54,7 @@ namespace Calcium.Core.Schema.Widgets
 
         public string GoogleCalendarLink
         {
-            get => $"https://calendar.google.com/calendar/u/0/render?action=TEMPLATE&dates={Start:yyyy-MM-ddThh:mm:sszzz}%2F{End:yyyy-MM-ddThh:mm:sszzz)}&details={Description}&location={Location}&text={Title}"; //2025-07-23T20%3A00%3A00%2B00%3A00
+            get => $"https://calendar.google.com/calendar/r/render?action=TEMPLATE&dates={Start:yyyy-MM-ddThh:mm:sszzz}%2F{End:yyyy-MM-ddThh:mm:sszzz)}&details={Description}&location={Location}&text={Title}"; //2025-07-23T20%3A00%3A00%2B00%3A00
         }
 
         public string OutlookCalendarLink

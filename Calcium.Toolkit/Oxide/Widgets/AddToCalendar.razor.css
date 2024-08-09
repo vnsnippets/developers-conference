@@ -27,6 +27,10 @@
             border-radius: 0.5rem;
         }
 
+        .calendar .links a:hover {
+            background: var(--body-500);
+        }
+
     .calendar .with-divider {
         position: relative;
         padding-top: 1.5rem;

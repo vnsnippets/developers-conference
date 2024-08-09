@@ -1,8 +1,5 @@
 ﻿@using Calcium.Core;
 @using System.Text.RegularExpressions
-@using Microsoft.JSInterop
-
-@inject IJSRuntime JS
 
 @if (Parameters != null)
 {
@@ -11,7 +8,6 @@
             @foreach (var token in SplitTokensInString(@Parameters.Heading))
             {
                 @RenderFragmentAsStringOrImage(token)
-                ;
             }
         </h5>
         <div class="countdown-container">
@@ -41,10 +37,8 @@
                 </div>
             </div>
         </div>
-        @if (Parameters.Event != null)
-        {
-            <button type="button" class="button secondary-outline-500" @onclick="DownloadICSFile">@Parameters.Event.Label</button>
-        }
+        
+        @ChildContent
     </div>
 }
 
@@ -54,6 +48,9 @@
 
     [Parameter]
     public Calcium.Core.Schema.Widgets.Countdown? Parameters { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
 
     private System.Timers.Timer _timer = new System.Timers.Timer(1000);
     private int _days, _hours, _minutes, _seconds = 0;
@@ -100,16 +97,5 @@
 
         if (match.Success) return@<span class="highlight">@match.Groups[1]</span>;
         else return @<span>@token</span>;
-    }
-
-    private async Task DownloadICSFile()
-    {
-        if (JS != null) {
-            // Get bytearray
-            var ics = Parameters?.Event?.AsICSCalendarEvent();
-
-            // Call JS function to initiate download
-            await JS.InvokeVoidAsync("DOM.FileDownload", "DevelopersConference2025.ics", "text/calendar", ics);
-        }
     }
 }

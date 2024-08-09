@@ -122,12 +122,20 @@ public static class Site
             Heading = "Count #{Every Second}# Until The Event",
             Event = new Calendar()
             {
+                Heading = "Add event to calendar",
                 Title = "Developers Conference 2025",
                 Description = "Join the Developers Conference 2025 along with developers,enthusiasts and industry experts for an engaging three days of technology! The theme of the day is: Emojis!",
                 Location = "Caudan Arts Centre, Port Louis",
-                Start = new DateOnly(2025, 7, 24),
-                End = new DateOnly(2025, 7, 26),
-                Label = "Add To Calendar"
+                Start = new DateTimeOffset(2025, 7, 24, 00, 00, 00, TimeSpan.Zero),
+                End = new DateTimeOffset(2025, 7, 24, 00, 00, 00, TimeSpan.Zero),
+                CTA = new()
+                {
+                    Default = "Download ICS File",
+                    Google = "Google",
+                    Outlook = "Outlook",
+                    Office365 = "Office 365",
+                    Yahoo = "Yahoo"
+                }
             }
         };
 

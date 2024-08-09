@@ -1,0 +1,39 @@
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JS
+
+@if (Event != null)
+{
+    <section class="calendar" @attributes=AdditionalAttributes>
+        <p class="heading regular">@Event.Heading</p>
+
+        <div class="links">
+            <a target="_blank" class="button secondary-outline-500" href="@Event.GoogleCalendarLink">@Event.CTA.Google</a>
+            <a target="_blank" class="button secondary-outline-500" href="@Event.OutlookCalendarLink">@Event.CTA.Outlook</a>
+            <a target="_blank" class="button secondary-outline-500" href="@Event.Office365CalendarLink">@Event.CTA.Office365</a>
+            <a target="_blank" class="button secondary-outline-500" href="@Event.YahooCalendarLink">@Event.CTA.Yahoo</a>
+        </div>
+
+        <button type="button" class="button secondary-outline-500" @onclick="DownloadICSFile">@Event.CTA.Default</button>
+    </section>
+}
+
+@code {
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public Calcium.Core.Schema.Widgets.Calendar? Event { get; set; }
+
+    private async Task DownloadICSFile()
+    {
+        if (JS != null)
+        {
+            // Get bytearray
+            var ics = Event?.CreateICSFileAsByteArray();
+
+            // Call JS function to initiate download
+            await JS.InvokeVoidAsync("DOM.FileDownload", "DevelopersConference2025.ics", "text/calendar", ics);
+        }
+    }
+}

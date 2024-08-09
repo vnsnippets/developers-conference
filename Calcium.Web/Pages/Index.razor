@@ -11,8 +11,10 @@
 
 <PageTitle>Calcium | Home</PageTitle>
 
-<Header Parameters="@Site.Sections.Hero">
-    <Countdown Parameters="@Site.Widgets.Countdown" data-animate-load />
+<Header Parameters=@Site.Sections.Hero>
+    <Countdown Parameters=@Site.Widgets.Countdown data-animate-load>
+        <AddToCalendar Event=@Site.Widgets.Countdown.Event />
+    </Countdown>
 </Header>
 
 <SectionWithTitle Title=@metrics.Title Caption=@metrics.Caption>

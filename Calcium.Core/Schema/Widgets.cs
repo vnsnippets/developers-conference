@@ -4,14 +4,25 @@ namespace Calcium.Core.Schema.Widgets
 {
     public class Calendar
     {
+        public struct Labels
+        {
+            public string Default { get; set; }
+            public string Google { get; set; }
+            public string Outlook { get; set; }
+            public string Office365 { get; set; }
+            public string Yahoo { get; set; }
+        }
+
+        public string Heading { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
-        public DateOnly Start { get; set; }
-        public DateOnly End { get; set; }
-        public string Label { get; set; } = "Add to Calendar";
+        public DateTimeOffset Start { get; set; }
+        public DateTimeOffset End { get; set; }
+        public bool AllDayEvent { get; set; } = true;
+        public Labels CTA { get; set; }
 
-        public byte[] AsICSCalendarEvent()
+        public byte[] CreateICSFileAsByteArray()
         {
             // Begin building string for the file
             StringBuilder sb = new();
@@ -39,6 +50,26 @@ namespace Calcium.Core.Schema.Widgets
 
             // Return string as bytearray
             return Encoding.UTF8.GetBytes(sb.ToString());
+        }
+
+        public string GoogleCalendarLink
+        {
+            get => $"https://calendar.google.com/calendar/render?action=TEMPLATE&dates={Start:yyyyMMdd}%2F{End:yyyyMMdd)}&details={Description}&location={Location}&text={Title}"; //2025-07-23T20%3A00%3A00%2B00%3A00
+        }
+
+        public string OutlookCalendarLink
+        {
+            get => $"https://outlook.live.com/calendar/0/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={Title}&body={Description}&location={Location}";
+        }
+
+        public string Office365CalendarLink
+        {
+            get => $"https://outlook.office.com/calendar/action/compose?allday={AllDayEvent}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt={Start:yyyy-MM-ddThh:mm:sszzz}&enddt={End:yyyy-MM-ddThh:mm:sszzz}&subject={Title}&body={Description}&location={Location}";
+        }
+
+        public string YahooCalendarLink 
+        {
+            get => $"https://calendar.yahoo.com/?desc={Description}&dur={((AllDayEvent) ? "allday" : "")}&in_loc={Location}&et={End:yyyy-MM-ddThh:mm:sszzz}&st={Start:yyyy-MM-ddThh:mm:sszzz}&title={Title}&v=60";
         }
     }
 

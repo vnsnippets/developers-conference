@@ -1,42 +1,32 @@
 ﻿@page "/"
 
-@using Calcium.Core
-@using Calcium.Core.Schema.Layouts
-@using Calcium.Core.Schema.Sections
-@using Calcium.Core.Schema.Widgets
 @using Calcium.Toolkit.Oxide.Sections
 @using Calcium.Toolkit.Oxide.Widgets
 @using Calcium.Toolkit.Oxide.Layouts
 @using Calcium.Web.Sections
 
+@using Calcium.Toolkit.Schema.Sections
+@using Calcium.Toolkit.Schema.Layouts
+
 <PageTitle>Calcium | Home</PageTitle>
 
 <Header Parameters=@Site.Sections.Hero>
     <Countdown Parameters=@Site.Widgets.Countdown data-animate-load>
-        <AddToCalendar Event=@Site.Widgets.Countdown.Event />
+        <AddToCalendar Event=@Site.Widgets.Calendar />
     </Countdown>
 </Header>
 
-<SectionWithTitle Title=@metrics.Title Caption=@metrics.Caption>
-    <Metrics Items=@metrics.Content data-animate-scroll="drop-in" />
-    <Gallery Parameters="@gallery" data-animate-scroll="drop-in" />
+<SectionWithTitle Title=@Site.Sections.Metrics.Title Caption=@Site.Sections.Metrics.Caption>
+    <Metrics Items=@Site.Sections.Metrics.Content data-animate-scroll="drop-in" />
+    <Gallery Parameters="@Site.Sections.Gallery" data-animate-scroll="drop-in" />
 </SectionWithTitle>
 
-<SectionWithTitle Title="@features.Title" Caption="@features.Caption">
-    <Features Items=@features.Content data-animate-scroll="drop-in" />
+<SectionWithTitle Title="@Site.Sections.Features.Title" Caption="@Site.Sections.Features.Caption">
+    <Features Items=@Site.Sections.Features.Content data-animate-scroll="drop-in" />
 </SectionWithTitle>
 
-<SectionWithTitle Title=@subscriptions.Title Caption=@subscriptions.Caption>
-    <Subscriptions Items=@subscriptions.Content data-animate-scroll="drop-in">
-        <WaitlistCallToAction Parameters=@waitlist />
+<SectionWithTitle Title=@Site.Sections.Subscriptions.Title Caption=@Site.Sections.Subscriptions.Caption>
+    <Subscriptions Items=@Site.Sections.Subscriptions.Content data-animate-scroll="drop-in">
+        <WaitlistCallToAction Parameters=@Site.Widgets.Waitlist />
     </Subscriptions>
 </SectionWithTitle>
-
-@code {
-    private ContentWithTitle<List<Content>> metrics = Site.Sections.Metrics;
-    private string[] gallery = Site.Sections.Gallery;
-    // private ContentWithTitle<List<Testimonial>> testimonials = Site.Widgets.Testimonials;
-    private ContentWithTitle<List<Feature>> features = Site.Widgets.Features;
-    private ContentWithTitle<List<Content>> subscriptions = Site.Sections.Subscriptions;
-    private Waitlist waitlist = Site.Widgets.Waitlist;
-}

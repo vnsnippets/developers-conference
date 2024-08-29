@@ -1,5 +1,5 @@
-﻿@using Calcium.Core.Schema.Widgets
-@using Calcium.Toolkit.Oxide.Components
+﻿@using Calcium.Toolkit.Oxide.Components
+@using Calcium.Toolkit.Schema.Sections
 
 @if (Items.Any())
 {
@@ -9,7 +9,7 @@
             <div class="feature">
                 <i class="icon"><Emoji Name="Feature Icon" Path="@item.Icon" data-emoji-size="50" /></i>
                 <h5>@item.Title</h5>
-                <p>@item.Description</p>
+                <p>@item.Caption</p>
             </div>
         }
     </div>
@@ -17,7 +17,7 @@
 
 @code {
     [Parameter]
-    public List<Feature> Items { get; set; } = [];
+    public List<ContentWithIcon> Items { get; set; } = [];
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

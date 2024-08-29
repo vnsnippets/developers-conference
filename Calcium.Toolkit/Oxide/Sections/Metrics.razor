@@ -1,12 +1,12 @@
-﻿@using Calcium.Core.Schema.Sections
-@using Calcium.Toolkit.Oxide.Components
+﻿@using Calcium.Toolkit.Oxide.Components
+@using Calcium.Toolkit.Schema.Sections
 
 @if (Items.Any())
 {
     <div class="metrics-items">
         @foreach(var item in Items.OrderBy((e) => e.Index))
         {
-            <div class="item" data-featured-item="@item.Featured">
+            <div class="item" data-featured-item="@item.Highlight">
                 @* <Vector Type="@item.Icon" Width="40" Height="40" data-animate-scroll="zoom-in-zoom-out" /> *@
                 <Emoji Path="@item.Icon" data-emoji-size="40" data-animate-scroll="zoom-in-zoom-out" />
                 <h2 class="title">@item.Title</h2>
@@ -18,7 +18,7 @@
 
 @code {
     [Parameter]
-    public List<Content> Items { get; set; } = [];
+    public List<ContentWithIcon> Items { get; set; } = [];
 
     [Parameter(CaptureUnmatchedValues = true)]
     public IDictionary<string, object>? AdditionalAttributes { get; set; }

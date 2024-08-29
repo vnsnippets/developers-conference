@@ -1,0 +1,30 @@
+﻿<section @attributes=AdditionalAttributes data-layout="section-with-title">
+    <div class="title-box">
+    @if (!string.IsNullOrEmpty(Title)) {
+        <h3 class="title">@Title</h3>
+    }
+    @if (!string.IsNullOrEmpty(Caption)) {
+        <p class="caption">@Caption</p>
+    }
+    </div>
+
+    <div class="content-box">
+        @ChildContent
+    </div>
+</section>
+
+@code {
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Caption { get; set; }
+
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

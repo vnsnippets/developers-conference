@@ -3,11 +3,21 @@
 
 @if (Items.Any())
 {
-    <div class="features">
+    <div class="features" data-size="@Expand">
         @foreach (var item in Items)
         {
             <div class="feature">
-                <i class="icon"><Emoji Name="Feature Icon" Path="@item.Icon" data-emoji-size="50" /></i>
+                @if (item.IconFragment != null)
+                {
+                    <i class="icon">
+                        @item.IconFragment
+                    </i>
+                }
+                else if (!string.IsNullOrEmpty(item.Icon)) {
+                    <i class="icon">
+                        <Emoji Name="Feature Icon" Path="@item.Icon" data-emoji-size="50" />
+                    </i>
+                }
                 <h5>@item.Title</h5>
                 <p>@item.Caption</p>
             </div>
@@ -16,6 +26,11 @@
 }
 
 @code {
+    public enum Size { S, M, L }
+
+    [Parameter]
+    public Size Expand { get; set; } = Features.Size.M;
+
     [Parameter]
     public List<ContentWithIcon> Items { get; set; } = [];
 

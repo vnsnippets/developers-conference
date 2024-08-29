@@ -6,16 +6,22 @@
 {
     <section @attributes=AdditionalAttributes class="hero">
         <div class="hero-body">
-            <h1 class="title contrast">
-                @foreach(var item in Parameters.Title) {
-                    <span class="inline-block">
-                    @foreach(var token in SplitTokensInString(item))
+            @if (!string.IsNullOrEmpty(Parameters.Title)) {
+                <h1 class="title contrast">
+                    @foreach (var token in SplitTokensInString(Parameters.Title))
                     {
-                        @RenderFragmentAsStringOrImage(token);
+                        @RenderFragmentAsStringOrImage(token)
                     }
-                    </span>
-                }
-            </h1>
+                    @* @foreach(var item in Parameters.Title) {
+                        <span class="inline-block">
+                        @foreach(var token in SplitTokensInString(item))
+                        {
+                            @RenderFragmentAsStringOrImage(token);
+                        }
+                        </span>
+                    } *@
+                </h1>
+            }
 
             @foreach (var line in Parameters.Captions)
             {
@@ -46,7 +52,7 @@
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
-    private string _baseURL = Calcium.Core.Site.ResourcesBaseURL;
+    private string _baseURL = Site.ResourcesBaseURL;
 
 
     private List<string> SplitTokensInString(string htmlString)

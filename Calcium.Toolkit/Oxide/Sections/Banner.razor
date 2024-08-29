@@ -1,0 +1,31 @@
+@using Calcium.Toolkit.Schema.Sections
+
+@if (Parameters != null)
+{
+    <section @attributes=AdditionalAttributes class="hero">
+        <h3>@Parameters.Captions</h3>
+        <h1>@Parameters.Title</h1>
+
+        <div class="cta-container">
+            @foreach (var cta in Parameters.CTA)
+            {
+                <a class="button cta @(cta.Type ?? "primary-500")" href="@cta.URL">
+                    <span>@cta.Name</span>
+                </a>
+            }
+        </div>
+
+        @ChildContent
+    </section>
+}
+
+@code {
+    [Parameter]
+    public Hero? Parameters { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

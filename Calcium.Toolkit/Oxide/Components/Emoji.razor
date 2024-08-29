@@ -1,16 +1,13 @@
 ﻿@using System.Web
-@using Core.Schema;
 
 @if (!string.IsNullOrEmpty(Path))
 {
     <span class="animated-emoji" @attributes=AdditionalAttributes>
-        <img src="@_baseURL/@Path" alt="@Name" />
+        <img src="@Path" alt="@Name" />
     </span>
 }
 
 @code {
-    private string _baseURL = Calcium.Core.Site.ResourcesBaseURL;
-
     [Parameter]
     public string? Path { get; set; }
 

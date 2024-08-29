@@ -1,0 +1,52 @@
+.hero {
+    --bg-image: url(https://images.unsplash.com/photo-1518882174711-1de40238921b?q=80&w=1326&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 1rem;
+
+    color: var(--primary-contrast);
+    padding: 10rem 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+
+    background: var(--body-500);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.hero h3 {
+    font-size: var(--fs-100);
+    font-weight: normal;
+    text-align: center;
+
+    margin: 0 2rem 1rem;
+}
+
+.hero h1 {
+    text-align: center;
+    line-height: 1.25;
+    margin: 0.5rem 0;
+    font-family: var(--heading-family);
+    font-weight: 500;
+    margin: 0 2rem;
+    max-width: 600px;
+}
+
+    .hero .cta-container {
+        margin-top: 2rem;
+    }

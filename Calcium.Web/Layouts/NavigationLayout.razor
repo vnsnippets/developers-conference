@@ -1,9 +1,9 @@
 @inherits LayoutComponentBase
 @implements IAsyncDisposable
 
-@using Calcium.Core
 @using Calcium.Toolkit.Oxide.Components
 @using Calcium.Toolkit.Oxide.Sections
+@using Calcium.Toolkit.Schema
 @using Microsoft.JSInterop
 
 @inject IJSRuntime JS
@@ -16,15 +16,15 @@
             </a>
         </div>
 
-        @if (Links.Any())
+        @if (Socials.Any())
         {
             <section class="social">
                 <ul class="links">
-                    @foreach (var item in Links.OrderBy((e) => e.Index))
+                    @foreach (var item in Socials.OrderBy((e) => e.Index))
                     {
                         <li>
                             <a class="button small icon secondary-400" href="@item.URL">
-                                <Vector Type="item.Icon" />
+                                @item.IconFragment
                             </a>
                         </li>
                     }
@@ -43,7 +43,7 @@
 @code {
     private IJSObjectReference? module;
 
-    public List<Calcium.Core.Schema.Elements.Social> Links = Site.Menus.Social;
+    public List<BaseLink> Socials = Site.Menus.Socials;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
